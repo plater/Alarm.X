@@ -77,25 +77,25 @@
 #define RA0_SetAnalogMode()         do { ANSELAbits.ANSELA0 = 1; } while(0)
 #define RA0_SetDigitalMode()        do { ANSELAbits.ANSELA0 = 0; } while(0)
 
-// get/set BUZZER aliases
-#define BUZZER_TRIS                 TRISAbits.TRISA1
-#define BUZZER_LAT                  LATAbits.LATA1
-#define BUZZER_PORT                 PORTAbits.RA1
-#define BUZZER_WPU                  WPUAbits.WPUA1
-#define BUZZER_OD                   ODCONAbits.ODCA1
-#define BUZZER_ANS                  ANSELAbits.ANSELA1
-#define BUZZER_SetHigh()            do { LATAbits.LATA1 = 1; } while(0)
-#define BUZZER_SetLow()             do { LATAbits.LATA1 = 0; } while(0)
-#define BUZZER_Toggle()             do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0)
-#define BUZZER_GetValue()           PORTAbits.RA1
-#define BUZZER_SetDigitalInput()    do { TRISAbits.TRISA1 = 1; } while(0)
-#define BUZZER_SetDigitalOutput()   do { TRISAbits.TRISA1 = 0; } while(0)
-#define BUZZER_SetPullup()          do { WPUAbits.WPUA1 = 1; } while(0)
-#define BUZZER_ResetPullup()        do { WPUAbits.WPUA1 = 0; } while(0)
-#define BUZZER_SetPushPull()        do { ODCONAbits.ODCA1 = 0; } while(0)
-#define BUZZER_SetOpenDrain()       do { ODCONAbits.ODCA1 = 1; } while(0)
-#define BUZZER_SetAnalogMode()      do { ANSELAbits.ANSELA1 = 1; } while(0)
-#define BUZZER_SetDigitalMode()     do { ANSELAbits.ANSELA1 = 0; } while(0)
+// get/set BEEP aliases
+#define BEEP_TRIS                 TRISAbits.TRISA1
+#define BEEP_LAT                  LATAbits.LATA1
+#define BEEP_PORT                 PORTAbits.RA1
+#define BEEP_WPU                  WPUAbits.WPUA1
+#define BEEP_OD                   ODCONAbits.ODCA1
+#define BEEP_ANS                  ANSELAbits.ANSELA1
+#define BEEP_SetHigh()            do { LATAbits.LATA1 = 1; } while(0)
+#define BEEP_SetLow()             do { LATAbits.LATA1 = 0; } while(0)
+#define BEEP_Toggle()             do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0)
+#define BEEP_GetValue()           PORTAbits.RA1
+#define BEEP_SetDigitalInput()    do { TRISAbits.TRISA1 = 1; } while(0)
+#define BEEP_SetDigitalOutput()   do { TRISAbits.TRISA1 = 0; } while(0)
+#define BEEP_SetPullup()          do { WPUAbits.WPUA1 = 1; } while(0)
+#define BEEP_ResetPullup()        do { WPUAbits.WPUA1 = 0; } while(0)
+#define BEEP_SetPushPull()        do { ODCONAbits.ODCA1 = 0; } while(0)
+#define BEEP_SetOpenDrain()       do { ODCONAbits.ODCA1 = 1; } while(0)
+#define BEEP_SetAnalogMode()      do { ANSELAbits.ANSELA1 = 1; } while(0)
+#define BEEP_SetDigitalMode()     do { ANSELAbits.ANSELA1 = 0; } while(0)
 
 // get/set LED aliases
 #define LED_TRIS                 TRISAbits.TRISA2
@@ -237,65 +237,65 @@
 #define MOTOR1_SetAnalogMode()      do { ANSELBbits.ANSELB0 = 1; } while(0)
 #define MOTOR1_SetDigitalMode()     do { ANSELBbits.ANSELB0 = 0; } while(0)
 
-// get/set MDBTX aliases
-#define MDBTX_TRIS                 TRISBbits.TRISB1
-#define MDBTX_LAT                  LATBbits.LATB1
-#define MDBTX_PORT                 PORTBbits.RB1
-#define MDBTX_WPU                  WPUBbits.WPUB1
-#define MDBTX_OD                   ODCONBbits.ODCB1
-#define MDBTX_ANS                  ANSELBbits.ANSELB1
-#define MDBTX_SetHigh()            do { LATBbits.LATB1 = 1; } while(0)
-#define MDBTX_SetLow()             do { LATBbits.LATB1 = 0; } while(0)
-#define MDBTX_Toggle()             do { LATBbits.LATB1 = ~LATBbits.LATB1; } while(0)
-#define MDBTX_GetValue()           PORTBbits.RB1
-#define MDBTX_SetDigitalInput()    do { TRISBbits.TRISB1 = 1; } while(0)
-#define MDBTX_SetDigitalOutput()   do { TRISBbits.TRISB1 = 0; } while(0)
-#define MDBTX_SetPullup()          do { WPUBbits.WPUB1 = 1; } while(0)
-#define MDBTX_ResetPullup()        do { WPUBbits.WPUB1 = 0; } while(0)
-#define MDBTX_SetPushPull()        do { ODCONBbits.ODCB1 = 0; } while(0)
-#define MDBTX_SetOpenDrain()       do { ODCONBbits.ODCB1 = 1; } while(0)
-#define MDBTX_SetAnalogMode()      do { ANSELBbits.ANSELB1 = 1; } while(0)
-#define MDBTX_SetDigitalMode()     do { ANSELBbits.ANSELB1 = 0; } while(0)
+// get/set GSMTX aliases
+#define GSMTX_TRIS                 TRISBbits.TRISB1
+#define GSMTX_LAT                  LATBbits.LATB1
+#define GSMTX_PORT                 PORTBbits.RB1
+#define GSMTX_WPU                  WPUBbits.WPUB1
+#define GSMTX_OD                   ODCONBbits.ODCB1
+#define GSMTX_ANS                  ANSELBbits.ANSELB1
+#define GSMTX_SetHigh()            do { LATBbits.LATB1 = 1; } while(0)
+#define GSMTX_SetLow()             do { LATBbits.LATB1 = 0; } while(0)
+#define GSMTX_Toggle()             do { LATBbits.LATB1 = ~LATBbits.LATB1; } while(0)
+#define GSMTX_GetValue()           PORTBbits.RB1
+#define GSMTX_SetDigitalInput()    do { TRISBbits.TRISB1 = 1; } while(0)
+#define GSMTX_SetDigitalOutput()   do { TRISBbits.TRISB1 = 0; } while(0)
+#define GSMTX_SetPullup()          do { WPUBbits.WPUB1 = 1; } while(0)
+#define GSMTX_ResetPullup()        do { WPUBbits.WPUB1 = 0; } while(0)
+#define GSMTX_SetPushPull()        do { ODCONBbits.ODCB1 = 0; } while(0)
+#define GSMTX_SetOpenDrain()       do { ODCONBbits.ODCB1 = 1; } while(0)
+#define GSMTX_SetAnalogMode()      do { ANSELBbits.ANSELB1 = 1; } while(0)
+#define GSMTX_SetDigitalMode()     do { ANSELBbits.ANSELB1 = 0; } while(0)
 
-// get/set MDBRX aliases
-#define MDBRX_TRIS                 TRISBbits.TRISB2
-#define MDBRX_LAT                  LATBbits.LATB2
-#define MDBRX_PORT                 PORTBbits.RB2
-#define MDBRX_WPU                  WPUBbits.WPUB2
-#define MDBRX_OD                   ODCONBbits.ODCB2
-#define MDBRX_ANS                  ANSELBbits.ANSELB2
-#define MDBRX_SetHigh()            do { LATBbits.LATB2 = 1; } while(0)
-#define MDBRX_SetLow()             do { LATBbits.LATB2 = 0; } while(0)
-#define MDBRX_Toggle()             do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0)
-#define MDBRX_GetValue()           PORTBbits.RB2
-#define MDBRX_SetDigitalInput()    do { TRISBbits.TRISB2 = 1; } while(0)
-#define MDBRX_SetDigitalOutput()   do { TRISBbits.TRISB2 = 0; } while(0)
-#define MDBRX_SetPullup()          do { WPUBbits.WPUB2 = 1; } while(0)
-#define MDBRX_ResetPullup()        do { WPUBbits.WPUB2 = 0; } while(0)
-#define MDBRX_SetPushPull()        do { ODCONBbits.ODCB2 = 0; } while(0)
-#define MDBRX_SetOpenDrain()       do { ODCONBbits.ODCB2 = 1; } while(0)
-#define MDBRX_SetAnalogMode()      do { ANSELBbits.ANSELB2 = 1; } while(0)
-#define MDBRX_SetDigitalMode()     do { ANSELBbits.ANSELB2 = 0; } while(0)
+// get/set GSMRX aliases
+#define GSMRX_TRIS                 TRISBbits.TRISB2
+#define GSMRX_LAT                  LATBbits.LATB2
+#define GSMRX_PORT                 PORTBbits.RB2
+#define GSMRX_WPU                  WPUBbits.WPUB2
+#define GSMRX_OD                   ODCONBbits.ODCB2
+#define GSMRX_ANS                  ANSELBbits.ANSELB2
+#define GSMRX_SetHigh()            do { LATBbits.LATB2 = 1; } while(0)
+#define GSMRX_SetLow()             do { LATBbits.LATB2 = 0; } while(0)
+#define GSMRX_Toggle()             do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0)
+#define GSMRX_GetValue()           PORTBbits.RB2
+#define GSMRX_SetDigitalInput()    do { TRISBbits.TRISB2 = 1; } while(0)
+#define GSMRX_SetDigitalOutput()   do { TRISBbits.TRISB2 = 0; } while(0)
+#define GSMRX_SetPullup()          do { WPUBbits.WPUB2 = 1; } while(0)
+#define GSMRX_ResetPullup()        do { WPUBbits.WPUB2 = 0; } while(0)
+#define GSMRX_SetPushPull()        do { ODCONBbits.ODCB2 = 0; } while(0)
+#define GSMRX_SetOpenDrain()       do { ODCONBbits.ODCB2 = 1; } while(0)
+#define GSMRX_SetAnalogMode()      do { ANSELBbits.ANSELB2 = 1; } while(0)
+#define GSMRX_SetDigitalMode()     do { ANSELBbits.ANSELB2 = 0; } while(0)
 
-// get/set IO_RB3 aliases
-#define IO_RB3_TRIS                 TRISBbits.TRISB3
-#define IO_RB3_LAT                  LATBbits.LATB3
-#define IO_RB3_PORT                 PORTBbits.RB3
-#define IO_RB3_WPU                  WPUBbits.WPUB3
-#define IO_RB3_OD                   ODCONBbits.ODCB3
-#define IO_RB3_ANS                  ANSELBbits.ANSELB3
-#define IO_RB3_SetHigh()            do { LATBbits.LATB3 = 1; } while(0)
-#define IO_RB3_SetLow()             do { LATBbits.LATB3 = 0; } while(0)
-#define IO_RB3_Toggle()             do { LATBbits.LATB3 = ~LATBbits.LATB3; } while(0)
-#define IO_RB3_GetValue()           PORTBbits.RB3
-#define IO_RB3_SetDigitalInput()    do { TRISBbits.TRISB3 = 1; } while(0)
-#define IO_RB3_SetDigitalOutput()   do { TRISBbits.TRISB3 = 0; } while(0)
-#define IO_RB3_SetPullup()          do { WPUBbits.WPUB3 = 1; } while(0)
-#define IO_RB3_ResetPullup()        do { WPUBbits.WPUB3 = 0; } while(0)
-#define IO_RB3_SetPushPull()        do { ODCONBbits.ODCB3 = 0; } while(0)
-#define IO_RB3_SetOpenDrain()       do { ODCONBbits.ODCB3 = 1; } while(0)
-#define IO_RB3_SetAnalogMode()      do { ANSELBbits.ANSELB3 = 1; } while(0)
-#define IO_RB3_SetDigitalMode()     do { ANSELBbits.ANSELB3 = 0; } while(0)
+// get/set PWRKEY aliases
+#define PWRKEY_TRIS                 TRISBbits.TRISB3
+#define PWRKEY_LAT                  LATBbits.LATB3
+#define PWRKEY_PORT                 PORTBbits.RB3
+#define PWRKEY_WPU                  WPUBbits.WPUB3
+#define PWRKEY_OD                   ODCONBbits.ODCB3
+#define PWRKEY_ANS                  ANSELBbits.ANSELB3
+#define PWRKEY_SetHigh()            do { LATBbits.LATB3 = 1; } while(0)
+#define PWRKEY_SetLow()             do { LATBbits.LATB3 = 0; } while(0)
+#define PWRKEY_Toggle()             do { LATBbits.LATB3 = ~LATBbits.LATB3; } while(0)
+#define PWRKEY_GetValue()           PORTBbits.RB3
+#define PWRKEY_SetDigitalInput()    do { TRISBbits.TRISB3 = 1; } while(0)
+#define PWRKEY_SetDigitalOutput()   do { TRISBbits.TRISB3 = 0; } while(0)
+#define PWRKEY_SetPullup()          do { WPUBbits.WPUB3 = 1; } while(0)
+#define PWRKEY_ResetPullup()        do { WPUBbits.WPUB3 = 0; } while(0)
+#define PWRKEY_SetPushPull()        do { ODCONBbits.ODCB3 = 0; } while(0)
+#define PWRKEY_SetOpenDrain()       do { ODCONBbits.ODCB3 = 1; } while(0)
+#define PWRKEY_SetAnalogMode()      do { ANSELBbits.ANSELB3 = 1; } while(0)
+#define PWRKEY_SetDigitalMode()     do { ANSELBbits.ANSELB3 = 0; } while(0)
 
 // get/set IO_RB4 aliases
 #define IO_RB4_TRIS                 TRISBbits.TRISB4

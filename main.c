@@ -42,7 +42,7 @@
 */
 
 #include "mcc_generated_files/mcc.h"
-
+#include "buffers.h"
 /*
                          Main application
  */
@@ -60,7 +60,7 @@ void main(void)
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
-
+    gsm_init();
     while (1)
     {
         // Add your application code

@@ -73,11 +73,11 @@ void TMR3_Initialize(void)
     //CS LFINTOSC; 
     T3CLK = 0x04;
 
-    //TMR3H 195; 
-    TMR3H = 0xC3;
+    //TMR3H 254; 
+    TMR3H = 0xFE;
 
-    //TMR3L 116; 
-    TMR3L = 0x74;
+    //TMR3L 202; 
+    TMR3L = 0xCA;
 
     // Clearing IF flag.
     PIR6bits.TMR3IF = 0;

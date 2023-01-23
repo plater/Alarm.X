@@ -169,7 +169,7 @@ void mkey_init(void);
 
 bool delay_10mS(uint16_t count);
 
-bool Read_Service(void);
+uint8_t Read_Service(void);
 
 void Orange_light(void);
 

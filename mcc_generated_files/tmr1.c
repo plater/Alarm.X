@@ -73,11 +73,11 @@ void TMR1_Initialize(void)
     //CS LFINTOSC; 
     T1CLK = 0x04;
 
-    //TMR1H 0; 
-    TMR1H = 0x00;
+    //TMR1H 225; 
+    TMR1H = 0xE1;
 
-    //TMR1L 0; 
-    TMR1L = 0x00;
+    //TMR1L 186; 
+    TMR1L = 0xBA;
 
     // Clearing IF flag.
     PIR4bits.TMR1IF = 0;

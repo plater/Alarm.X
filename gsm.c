@@ -37,15 +37,15 @@ void slow_ledflash(bool colour)
 //Wait for buffer empty
 void gsm_waitx(void)
 {
-    TX1STAbits.TXEN = 1;
-    while(!PIR3bits.TX1IF)
+    U1CON0bits.TXEN = 1;
+    while(!PIR3bits.U1TXIF)
     {
     }
 }
 //Wait for buffer empty
 void gsm_waitr(void)
 {
-    while(!PIR3bits.RC1IF)
+    while(!PIR3bits.U1RXIF)
     {
         
     }
@@ -53,9 +53,9 @@ void gsm_waitr(void)
 
 void gsm_transmit(uint8_t txbyte)
 {
-    TX1STAbits.TXEN = 1;
+    U1CON0bits.TXEN = 1;
     EUSARTG_Write(txbyte);
-    while(!TX1STAbits.TRMT){}
+    while(!U1ERRIRbits.TXMTIF){}
 }
 
 void gsm_zerobuff(uint8_t* gsmsgbuf, uint16_t count )
@@ -219,9 +219,9 @@ uint8_t Read_timeout1(uint8_t *msgadd)
     T5CONbits.TMR5ON = 1;
     while(!PIR4bits.TMR5IF)
     {
-        if(PIR3bits.RC1IF)
+        if(PIR3bits.U1RXIF)
         {
-            PIR3bits.RC1IF = 0;
+            PIR3bits.U1RXIF = 0;
             msgadd[v] = RC1REG;
             T5CONbits.TMR5ON = 0;
             TMR5_Initialize();
@@ -433,7 +433,7 @@ void clock_display(void)
     gsmflags.msgavl = 0;
     if(1 == 1)
     {
-        if(PIR3bits.RC1IF)
+        if(PIR3bits.U1RXIF)
         {//This detects and ignores rings 2\r\n or 3\r\n.
             gsm_receive(1, gsmusm);
             if(gsmusm[0] != '+')
@@ -995,7 +995,7 @@ void One_Second(void)
 
 uint8_t gsm_Read(void)
 {
-    while(!PIR3bits.RC1IF)
+    while(!PIR3bits.U1RXIF)
     {
         if(PIR4bits.TMR4IF)
         {
@@ -1040,7 +1040,7 @@ void gsm_netwait(void)
 uint8_t EUSARTG_Read(void)
 {
 //    TRISCbits.TRISC3 = 1;
-    while(!PIR3bits.RC1IF)
+    while(!PIR3bits.U1RXIF)
     {
         
     }
@@ -1060,7 +1060,7 @@ uint8_t EUSARTG_Read(void)
 
 void EUSARTG_Write(uint8_t txData)
 {
-    while(0 == PIR3bits.TX1IF)
+    while(0 == PIR3bits.U1TXIF)
     {
     }
 
@@ -1086,19 +1086,19 @@ bool delay_10mS(uint16_t count)
     return 1;
 }
 
-//PIR3bits.TX1IF -  EUSART1 Transmit Interrupt Flag bit
+//PIR3bits.U1TXIF -  EUSART1 Transmit Interrupt Flag bit
 //1 = The EUSART1 transmit buffer, TX1REG, is empty (cleared by writing TX1REG)
 //0 = The EUSART1 transmit buffer is full
 
-//&& TX1STAbits.TXEN -  Transmit Enable bit SREN/CREN bits of RCxSTA (Register 27-2) override TXEN in Sync mode.
+//&& U1CON0bits.TXEN -  Transmit Enable bit SREN/CREN bits of RCxSTA (Register 27-2) override TXEN in Sync mode.
 // 1 = Transmit enabled
 // 0 = Transmit disabled
 
-//TX1STAbits.TRMT -  Transmit Shift Register Status bit
+//U1ERRIRbits.TXMTIF -  Transmit Shift Register Status bit
 // 1 = TSR empty TSR = Tx shift reg
 // 0 = TSR full
 
-//PIR3bits.RC1IF -  EUSART1 Receive Interrupt Flag bit
+//PIR3bits.U1RXIF -  EUSART1 Receive Interrupt Flag bit
 //1 = The EUSART1 receive buffer, RC1REG, is full (cleared by reading RC1REG)
 //0 = The EUSART1 receive buffer is empty
 

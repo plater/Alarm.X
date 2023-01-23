@@ -444,9 +444,9 @@ uint8_t Read_timeout(uint8_t *msgadd)
     T3CONbits.TMR3ON = 1;
     while(!PIR4bits.TMR3IF)
     {
-        if(PIR3bits.RC1IF)
+        if(PIR3bits.U1RXIF)
         {
-            PIR3bits.RC1IF = 0;
+            PIR3bits.U1RXIF = 0;
             msgadd[v] = RC1REG;
             T3CONbits.TMR3ON = 0;
             TMR3_Initialize();

@@ -198,7 +198,7 @@ void dispense(uint8_t chanel)
     }
     ClrWdt();
 }
-
+#if 0
 void vend_nosense(uint8_t chanel)
 {
     ClrWdt();
@@ -289,6 +289,7 @@ void led_switch(uint8_t color)
         GLED_Toggle();
     }
 }
+#endif //#if 0
 
 void DATAEE_WriteWord(uint16_t bAdd, uint16_t bData)
 {
