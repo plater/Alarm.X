@@ -7,6 +7,8 @@
 
 #include "dispense.h"
 
+const uint16_t pricestore = 0x00;
+
 #if 0
 bool price_check(void)
 {
@@ -265,31 +267,20 @@ void led_opperate(void)
         RLED_SetLow();
     }
 }
+#endif //#if 0
+
 void led_switch(uint8_t color)
 {
-    //color = 1 = red 0 = green 2 = off
-    if(color == 1) //Red
+    if(color < 2)
     {
-        RLED_SetHigh();
-        GLED_SetLow();
-    }
-    else if(color == 0) //Green
-    {
-        GLED_SetHigh();
-        RLED_SetLow();
-    }
-    else if(color == 2) //Off
-    {
-        RLED_SetLow();
-        GLED_SetLow();
+        LED_SetHigh();
     }
     else
     {
-        RLED_Toggle();
-        GLED_Toggle();
+        LED_SetLow();
     }
 }
-#endif //#if 0
+
 
 void DATAEE_WriteWord(uint16_t bAdd, uint16_t bData)
 {

@@ -13,8 +13,8 @@
 //#include "vend.h"
 /*bool price_check(void);
 //Prices per vend 8 x uint8_t*/
-const uint16_t pricestore = 0x00;
-volatile uint8_t pricevend[8];
+//const uint16_t pricestore = 0x00;
+//volatile uint8_t pricevend[8];
 
 /*void dispense(uint8_t chanel);
 */

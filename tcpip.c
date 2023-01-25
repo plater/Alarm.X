@@ -441,16 +441,16 @@ uint8_t Read_timeout(uint8_t *msgadd)
 {
     uint8_t v = 0;
     TMR3_Initialize();
-    T3CONbits.TMR3ON = 1;
-    while(!PIR4bits.TMR3IF)
+    TMR3_StartTimer();
+    while(!PIR6bits.TMR3IF)
     {
         if(PIR3bits.U1RXIF)
         {
             PIR3bits.U1RXIF = 0;
-            msgadd[v] = RC1REG;
-            T3CONbits.TMR3ON = 0;
+            msgadd[v] = U1RXB;
+            TMR3_StopTimer();
             TMR3_Initialize();
-            T3CONbits.TMR3ON = 1;
+            TMR3_StartTimer();
             if(v < 127)
             {
                 v++;
@@ -598,14 +598,14 @@ bool gsm_waitstart(void)
     uint8_t x = 0;
     while(tgsmbyte != '>')
     {
-        tgsmbyte = EUSARTG_Read();
+        tgsmbyte = UART1_Read();
         x++;
         if(x >= 255)
         {
             return 1;
         }
     }
-    tgsmbyte = EUSARTG_Read();
+    tgsmbyte = UART1_Read();
     return 0;
 }
 #if 0

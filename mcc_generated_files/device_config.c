@@ -69,7 +69,7 @@
 #pragma config ZCD = OFF    // ZCD Disable bit->ZCD disabled. ZCD can be enabled by setting the ZCDSEN bit of ZCDCON
 #pragma config PPS1WAY = OFF    // PPSLOCK bit One-Way Set Enable bit->PPSLOCK bit can be set and cleared repeatedly (subject to the unlock sequence)
 #pragma config STVREN = ON    // Stack Full/Underflow Reset Enable bit->Stack full/underflow will cause Reset
-#pragma config DEBUG = OFF    // Debugger Enable bit->Background debugger disabled
+#pragma config DEBUG = ON    // Debugger Enable bit->Background debugger enabled
 #pragma config XINST = OFF    // Extended Instruction Set Enable bit->Extended Instruction Set and Indexed Addressing Mode disabled
 
 // CONFIG3L

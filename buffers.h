@@ -53,6 +53,7 @@ typedef ptrdiff_t idx_t;
     bool ledfast;
     bool ledchange;
 
+volatile uint8_t pricevend[8];
 //Gsm related memory
 uint8_t gsmbyte;
 //moble network code 01 = Vodacom, 10 or 12 = Mtn
@@ -154,6 +155,8 @@ int tls_get_payment(void);
 void tls_getseed(void);
 
 int OpenConnection(void);
+
+void gsm_init(bool inittype);
 
 void dispense(uint8_t chanel);
 

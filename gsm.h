@@ -184,7 +184,7 @@ void gsm_receive(uint8_t noofline, uint8_t messagebuf[]);
 
 void gsm_msg(uint8_t *msgadd);
 
-void gsm_init(bool inittype);
+
 
 void gsm_txAT(void);
 
@@ -195,10 +195,6 @@ uint8_t gsm_Read(void);
 void gsm_off(void);
 
 void gsm_netwait(void);
-
-uint8_t EUSARTG_Read(void);
-
-void EUSARTG_Write(uint8_t txData);
 
 int int_sms_notify();
 

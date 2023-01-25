@@ -61,8 +61,8 @@
 #include "tmr2.h"
 #include "cmp1.h"
 #include "tmr0.h"
-#include "dac1.h"
 #include "memory.h"
+#include "dac1.h"
 #include "uart2.h"
 #include "uart1.h"
 

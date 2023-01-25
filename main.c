@@ -59,8 +59,8 @@ void main(void)
     //INTERRUPT_GlobalInterruptEnable();
 
     // Disable the Global Interrupts
-    //INTERRUPT_GlobalInterruptDisable();
-    gsm_init();
+    INTERRUPT_GlobalInterruptDisable();
+    gsm_init(0);
     while (1)
     {
         // Add your application code

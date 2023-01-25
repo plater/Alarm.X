@@ -301,15 +301,6 @@ void Update_Hopcoin(uint8_t newval, uint8_t direction)
     displ_hex((__uint24)newval);*/
 }
 
-uint8_t Read_Service(void)
-{
-    DAC1CON1 = 0x01;
-    __delay_us(50);
-    uint8_t senval = CMOUT;
-    DAC1CON1 = sensorval;
-    return senval;
-}
-
 void Sensor_set(void)
 {
 /*    mdbflags.endis = 1;
@@ -337,7 +328,7 @@ void Sensor_set(void)
             lcd_string(servmsg, line1);
             break;
         }
-        if(PIR4bits.TMR3IF)
+        if(PIR6bits.TMR3IF)
         {
             displ_sens(senspos, dacpos);
         }

@@ -54,7 +54,7 @@ void gsm_waitr(void)
 void gsm_transmit(uint8_t txbyte)
 {
     U1CON0bits.TXEN = 1;
-    EUSARTG_Write(txbyte);
+    UART1_Write(txbyte);
     while(!U1ERRIRbits.TXMTIF){}
 }
 
@@ -93,17 +93,17 @@ void gsm_init(bool inittype)
 {
     uint16_t x;
     /*
-    PIE3bits.RC1IE = 0;
+    PIE2bits.SPI1RXIE = 0;
     gsmflags.meerror = 0;
 //    eusart2RxCount = 512;
     gsminit:
     
   //Make sure that 5 seconds have passed.
-    while(!PIR4bits.TMR4IF)d
+    while(!PIR7bits.TMR4IF)d
     {
     }
     TMR4_Stop();
-    PIR4bits.TMR4IF = 0;*/
+    PIR7bits.TMR4IF = 0;*/
     
 /** TODO: test for autobaud and
  reconfigure for 57600 baud rate
@@ -215,32 +215,35 @@ void gsm_init(bool inittype)
 uint8_t Read_timeout1(uint8_t *msgadd)
 {
     uint8_t v = 0;
-    TMR5_Initialize();
+    TMR5_Initialize(); //Currently set at 4 seconds
+    TMR5_WriteTimer(0X1CF3); //Should be 15 seconds wait for rdy
     T5CONbits.TMR5ON = 1;
-    while(!PIR4bits.TMR5IF)
+    U1CON0bits.RXEN = 1;
+    while(!PIR8bits.TMR5IF)
     {
         if(PIR3bits.U1RXIF)
         {
-            PIR3bits.U1RXIF = 0;
-            msgadd[v] = RC1REG;
+            
+            led_switch(1);//RED
+            msgadd[v] = U1RXB;
             T5CONbits.TMR5ON = 0;
             TMR5_Initialize();
             T5CONbits.TMR5ON = 1;
+            PIR3bits.U1RXIF = 0;
+            led_switch(2);//OFF
             if(v < 128)
             {
                 v++;
             }
-            else
-            {
-                break;
-            }
         }
+        
     }
+    led_switch(1);//RED
     msgadd[v] = 0;
     return v;
 }
 
-bool Read_Service(void)
+uint8_t Read_Service(void)
 {
     uint8_t x = 0;
     while(!SERVICE_PORT)
@@ -273,15 +276,15 @@ void Read_SMS(void)
     gsm_receive(1, gsmtim);
 //    price_set();
     gsmflags.msgavl = 0;
-    PIE3bits.RC1IE = 1;
-    INTCONbits.GIEH = 1;
-    INTCONbits.GIEL = 1;
+    PIE2bits.SPI1RXIE = 1;
+    INTCON0bits.GIEH = 1;
+    INTCON0bits.GIEL = 1;
     led_switch(2); //off
     while(SERVICE_PORT)
     {
         int_sms_notify();
     }
-    PIE3bits.RC1IE = 0;
+    PIE2bits.SPI1RXIE = 0;
 }
 /*
     gsm_msg(smstxt);
@@ -328,7 +331,7 @@ int int_sms_notify(void)
             if(y > 0)//if y > 0 then something has been received
             {
                 y = 0;
-                PIE3bits.RC1IE = 0;
+                PIE2bits.SPI1RXIE = 0;
                 ClrWdt();
                 led_switch(0); //Green = price store
                 x = strstr(gsmmsg, "Setup,");// check for price set message
@@ -340,7 +343,7 @@ int int_sms_notify(void)
                         led_switch(2); //off
                         gsm_msg(smsdel);//"AT+CMGDA=\"DEL ALL\"\r"
                         gsm_receive(1, gsmtim);
-                        PIE3bits.RC1IE = 1;
+                        PIE2bits.SPI1RXIE = 1;
                     }
                     else// is a merchant key
                     {
@@ -353,7 +356,7 @@ int int_sms_notify(void)
                         gsm_msg(smsdel);//"AT+CMGDA=\"DEL ALL\"\r"
                         gsm_receive(1, gsmtim);
                         __delay_ms(1000);
-                        PIE3bits.RC1IE = 1;
+                        PIE2bits.SPI1RXIE = 1;
                     }
                 }
                 else //Is a price set message
@@ -363,7 +366,7 @@ int int_sms_notify(void)
                     gsm_msg(smsdel);//"AT+CMGDA=\"DEL ALL\"\r"
                     gsm_receive(1, gsmtim);
                     __delay_ms(1000);
-                    PIE3bits.RC1IE = 1;
+                    PIE2bits.SPI1RXIE = 1;
                 }
             }
         /*
@@ -392,13 +395,13 @@ int int_sms_notify(void)
 
 int gsmint_receive( uint8_t messagebuf[] )
 {
-    //TMR3 PIR4bits.TMR3IF T3CONbits.TMR3ON = 1;
+    //TMR3 PIR6bits.TMR3IF TMR3_StartTimer();
     TMR3_Initialize();
-    T3CONbits.TMR3ON = 1;
+    TMR3_StartTimer();
     gsmflags.meerror = 0;
     int x = 0;
     gsmbyte = 0;
-    while(!PIR4bits.TMR3IF)// If no data for 10mS then message receive complete
+    while(!PIR6bits.TMR3IF)// If no data for 10mS then message receive complete
     {
         if(EUSART1_is_rx_ready()) //Receive buffer data present
         {
@@ -406,10 +409,10 @@ int gsmint_receive( uint8_t messagebuf[] )
             messagebuf[x] = gsmbyte;
             x++;
             TMR3_Initialize();
-            T3CONbits.TMR3ON = 1;
+            TMR3_StartTimer();
         }
     }
-    T3CONbits.TMR3ON = 0;
+    TMR3_StopTimer();
     x++;
     messagebuf[x] = 0;
     return x;
@@ -421,15 +424,15 @@ void clock_display(void)
 {
     gsmflags.sigtest = 0;
     sig_strength();
-    INTCONbits.PEIE = 0;
-    PIE3bits.RC1IE =0;
+    INTCON0bits.PEIE = 0;
+    PIE2bits.SPI1RXIE =0;
     dispclka:
     TMR2_Initialize();
     PIR4bits.TMR2IF = 0;
     T2CONbits.TMR2ON = 1;
     gsm_gettime();
 //    disp_clock();
-    INTCONbits.PEIE = 0;
+    INTCON0bits.PEIE = 0;
     gsmflags.msgavl = 0;
     if(1 == 1)
     {
@@ -452,7 +455,7 @@ void clock_display(void)
         parse_sms();
         asm("nop");
     }
-    INTCONbits.PEIE = 0;
+    INTCON0bits.PEIE = 0;
 //    gsm_msg(smstxt);
 //    gsm_receive(1);
 //    gsm_msg(smslst);
@@ -472,7 +475,7 @@ void get_radio(void)
     gsm_receive(1, gsmmsg);
     while(gsmflags.eomsg)
     {
-        gsmbyte = EUSARTG_Read();
+        gsmbyte = UART1_Read();
         gsmmsg[x] = gsmbyte;
         if(gsmbyte == 0x0A)
         {
@@ -584,7 +587,7 @@ void gsm_numack(void)
     gsmflags.abrtmsg = 0;
     while(x > 0)
     {
-        gsmbyte = EUSARTG_Read();
+        gsmbyte = UART1_Read();
         if(gsmbyte == '4')
         {
             gsmflags.abrtmsg = 1;
@@ -827,26 +830,26 @@ void gsm_setime(void)
     //Search for *
     while(gsmbyte != '*')
     {
-        gsmbyte = EUSARTG_Read();
+        gsmbyte = UART1_Read();
         if(gsmflags.meerror)
         {
             goto offnet;
         }
     }
-    gsmbyte = EUSARTG_Read(); //P
-    gsmbyte = EUSARTG_Read(); //S
-    gsmbyte = EUSARTG_Read(); //U
+    gsmbyte = UART1_Read(); //P
+    gsmbyte = UART1_Read(); //S
+    gsmbyte = UART1_Read(); //U
     if(gsmbyte != 'U')
     {
         goto retry;
     }
     while(gsmbyte != ':')
     {
-        gsmbyte = EUSARTG_Read();
+        gsmbyte = UART1_Read();
     }
     while(gsmbyte != '\n')
     {
-        gsmbyte = EUSARTG_Read();
+        gsmbyte = UART1_Read();
         gsmmsg[x++] = gsmbyte;
     }
     //In case of DST message.
@@ -920,9 +923,9 @@ uint8_t gsm_unsolic(void)
     resttim:
     TMR4_Initialize();
     T4CONbits.TMR4ON = 1;
-    while(!PIR4bits.TMR4IF && x < 0x200)
+    while(!PIR7bits.TMR4IF && x < 0x200)
     {
-        gsmmsg[x] = gsm_Read();
+        gsmmsg[x] = UART1_Read();
         if(gsmmsg[x] == '\n')
         {
             y++;
@@ -944,7 +947,7 @@ void gsm_receive(uint8_t noofline, uint8_t messagebuf[])
     gsmbyte = 0;
     while(noofline > 0x00)
     {
-        gsmbyte = EUSARTG_Read();
+        gsmbyte = UART1_Read();
         if(gsmflags.meerror)
         {
             break;
@@ -974,9 +977,11 @@ uint8_t gsm_on(void)
 {
     gsm_msg("AT+CPOWD=0\n");
     __delay_ms(1000);
-    LATCbits.LATC3 = 0;
+    led_switch(1);//RED
+    PWRKEY_SetLow();
     One_Second();//Hold PWR low for 1 second
-    LATCbits.LATC3 = 1;
+    PWRKEY_SetHigh();
+    led_switch(2);//OFF
     uint8_t x = Read_timeout1(gsmusd);
 //    gsm_receive(10, gsmusd);
     return x;
@@ -986,18 +991,18 @@ void One_Second(void)
 {
     T1CONbits.TMR1ON = 0;
     TMR1_Initialize();
-    TMR1_WriteTimer(19036);//TMR1 1 sec = 0x86E8 = 34536; 19036 = 0x4A5C
+    TMR1_WriteTimer(0xF0DD);//TMR1 1 sec = 0x86E8 = 34536; 19036 = 0x4A5C
     T1CONbits.TMR1ON = 1;
     while(!PIR4bits.TMR1IF){}
     T1CONbits.TMR1ON = 0;
     PIR4bits.TMR1IF = 0;
 }
-
+/*
 uint8_t gsm_Read(void)
 {
     while(!PIR3bits.U1RXIF)
     {
-        if(PIR4bits.TMR4IF)
+        if(PIR7bits.TMR4IF)
         {
             break;
         }
@@ -1012,9 +1017,9 @@ uint8_t gsm_Read(void)
         RC1STAbits.CREN = 1; 
     }
 
-    return RC1REG;
+    return U1RXB;
 }
-
+*/
 void gsm_off(void)
 {
     gsm_msg("AT+CPOWD=0\n");
@@ -1027,60 +1032,30 @@ void gsm_netwait(void)
     uint8_t x = 0;
     while(gsmbyte != 'S')
     {
-        gsmbyte = EUSARTG_Read();
+        gsmbyte = UART1_Read();
         gsmmsg[x++] = gsmbyte;
     }
     while(gsmbyte != '\n')
     {
-        gsmbyte = EUSARTG_Read();
+        gsmbyte = UART1_Read();
         gsmmsg[x++] = gsmbyte;
     }
-}
-
-uint8_t EUSARTG_Read(void)
-{
-//    TRISCbits.TRISC3 = 1;
-    while(!PIR3bits.U1RXIF)
-    {
-        
-    }
-//    TRISCbits.TRISC3 = 0;
-
-    
-    if(RC1STAbits.OERR)
-    {
-        // EUSART1 error - restart
-
-        RC1STAbits.CREN = 0; 
-        RC1STAbits.CREN = 1; 
-    }
-
-    return RC1REG;
-}
-
-void EUSARTG_Write(uint8_t txData)
-{
-    while(0 == PIR3bits.U1TXIF)
-    {
-    }
-
-    TX1REG = txData;    // Write the data byte to the USART.
 }
 
 bool delay_10mS(uint16_t count)
 {
     TMR3_Initialize();
-    T3CONbits.TMR3ON = 1;
-    PIR4bits.TMR3IF = 0;
+    TMR3_StartTimer();
+    PIR6bits.TMR3IF = 0;
     while(count > 0)
     {
-        if(PIR4bits.TMR3IF)
+        if(PIR6bits.TMR3IF)
         {
             count--;
-            T3CONbits.TMR3ON = 0;
+            TMR3_StopTimer();
             TMR3_Initialize();
-            T3CONbits.TMR3ON = 1;
-            PIR4bits.TMR3IF = 0;
+            TMR3_StartTimer();
+            PIR6bits.TMR3IF = 0;
         }
     }
     return 1;
@@ -1099,7 +1074,7 @@ bool delay_10mS(uint16_t count)
 // 0 = TSR full
 
 //PIR3bits.U1RXIF -  EUSART1 Receive Interrupt Flag bit
-//1 = The EUSART1 receive buffer, RC1REG, is full (cleared by reading RC1REG)
+//1 = The EUSART1 receive buffer, U1RXB, is full (cleared by reading U1RXB)
 //0 = The EUSART1 receive buffer is empty
 
 
