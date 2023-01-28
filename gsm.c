@@ -37,7 +37,7 @@ void slow_ledflash(bool colour)
 //Wait for buffer empty
 void gsm_waitx(void)
 {
-    U1CON0bits.TXEN = 1;
+    U2CON0bits.TXEN = 1;
     while(!PIR3bits.U1TXIF)
     {
     }
@@ -53,9 +53,9 @@ void gsm_waitr(void)
 
 void gsm_transmit(uint8_t txbyte)
 {
-    U1CON0bits.TXEN = 1;
-    UART1_Write(txbyte);
-    while(!U1ERRIRbits.TXMTIF){}
+    U2CON0bits.TXEN = 1;
+    UART2_Write(txbyte);
+    while(!U2ERRIRbits.TXMTIF){}
 }
 
 void gsm_zerobuff(uint8_t* gsmsgbuf, uint16_t count )
@@ -112,7 +112,7 @@ void gsm_init(bool inittype)
     led_switch(2); //Off
     gsm_zerobuff(gsmusd, 127); 
     y = gsm_on();
-    led_switch(1);//RED
+    led_switch(2);//RED
 //    x = strstr(gsmusd, "RDY");
     if(y == 0)                                                                                                                                                                                                                                      if(y == 0)
     {
@@ -149,11 +149,19 @@ void gsm_init(bool inittype)
     
 	gsm_msg((uint8_t*)"AT+CREG?\r");
 	gsm_receive(2, gsmusd);
-	if(gsmusd[9] != '1')
-	{
-		goto gsmwait;
-	}
-    led_switch(0); //LED toggle GREEN
+    uint8_t w = gsmusd[9];
+	switch(w)
+    {
+        case '1' : 
+            break;
+        
+        case '5' : 
+            break;
+            
+        default :
+            goto gsmwait;
+    }
+    led_switch(2); //LED off
 	gsm_msg((uint8_t*)"AT+CSQ\r");
 	gsm_receive(2, gsmusd);
     gsm_msg((uint8_t*)tsoftid);
@@ -218,19 +226,21 @@ uint8_t Read_timeout1(uint8_t *msgadd)
     TMR5_Initialize(); //Currently set at 4 seconds
     TMR5_WriteTimer(0X1CF3); //Should be 15 seconds wait for rdy
     T5CONbits.TMR5ON = 1;
-    U1CON0bits.RXEN = 1;
+    U2CON0bits.RXEN = 1;
+    U1FIFObits.RXBE = 1;
     while(!PIR8bits.TMR5IF)
     {
-        if(PIR3bits.U1RXIF)
+        if(PIR6bits.U2RXIF)//U2FIFObits.RXBF
         {
             
             led_switch(1);//RED
-            msgadd[v] = U1RXB;
+            msgadd[v] = U2RXB;
             T5CONbits.TMR5ON = 0;
             TMR5_Initialize();
             T5CONbits.TMR5ON = 1;
             PIR3bits.U1RXIF = 0;
             led_switch(2);//OFF
+            U1FIFObits.RXBE = 1;
             if(v < 128)
             {
                 v++;
@@ -475,7 +485,7 @@ void get_radio(void)
     gsm_receive(1, gsmmsg);
     while(gsmflags.eomsg)
     {
-        gsmbyte = UART1_Read();
+        gsmbyte = UART2_Read();
         gsmmsg[x] = gsmbyte;
         if(gsmbyte == 0x0A)
         {
@@ -587,7 +597,7 @@ void gsm_numack(void)
     gsmflags.abrtmsg = 0;
     while(x > 0)
     {
-        gsmbyte = UART1_Read();
+        gsmbyte = UART2_Read();
         if(gsmbyte == '4')
         {
             gsmflags.abrtmsg = 1;
@@ -830,26 +840,26 @@ void gsm_setime(void)
     //Search for *
     while(gsmbyte != '*')
     {
-        gsmbyte = UART1_Read();
+        gsmbyte = UART2_Read();
         if(gsmflags.meerror)
         {
             goto offnet;
         }
     }
-    gsmbyte = UART1_Read(); //P
-    gsmbyte = UART1_Read(); //S
-    gsmbyte = UART1_Read(); //U
+    gsmbyte = UART2_Read(); //P
+    gsmbyte = UART2_Read(); //S
+    gsmbyte = UART2_Read(); //U
     if(gsmbyte != 'U')
     {
         goto retry;
     }
     while(gsmbyte != ':')
     {
-        gsmbyte = UART1_Read();
+        gsmbyte = UART2_Read();
     }
     while(gsmbyte != '\n')
     {
-        gsmbyte = UART1_Read();
+        gsmbyte = UART2_Read();
         gsmmsg[x++] = gsmbyte;
     }
     //In case of DST message.
@@ -925,7 +935,7 @@ uint8_t gsm_unsolic(void)
     T4CONbits.TMR4ON = 1;
     while(!PIR7bits.TMR4IF && x < 0x200)
     {
-        gsmmsg[x] = UART1_Read();
+        gsmmsg[x] = UART2_Read();
         if(gsmmsg[x] == '\n')
         {
             y++;
@@ -947,7 +957,7 @@ void gsm_receive(uint8_t noofline, uint8_t messagebuf[])
     gsmbyte = 0;
     while(noofline > 0x00)
     {
-        gsmbyte = UART1_Read();
+        gsmbyte = UART2_Read();
         if(gsmflags.meerror)
         {
             break;
@@ -982,6 +992,8 @@ uint8_t gsm_on(void)
     One_Second();//Hold PWR low for 1 second
     PWRKEY_SetHigh();
     led_switch(2);//OFF
+//    uint8_t x = 4;
+//    gsm_receive(x, gsmusd);
     uint8_t x = Read_timeout1(gsmusd);
 //    gsm_receive(10, gsmusd);
     return x;
@@ -1017,7 +1029,7 @@ uint8_t gsm_Read(void)
         RC1STAbits.CREN = 1; 
     }
 
-    return U1RXB;
+    return U2RXB;
 }
 */
 void gsm_off(void)
@@ -1032,12 +1044,12 @@ void gsm_netwait(void)
     uint8_t x = 0;
     while(gsmbyte != 'S')
     {
-        gsmbyte = UART1_Read();
+        gsmbyte = UART2_Read();
         gsmmsg[x++] = gsmbyte;
     }
     while(gsmbyte != '\n')
     {
-        gsmbyte = UART1_Read();
+        gsmbyte = UART2_Read();
         gsmmsg[x++] = gsmbyte;
     }
 }
@@ -1065,16 +1077,16 @@ bool delay_10mS(uint16_t count)
 //1 = The EUSART1 transmit buffer, TX1REG, is empty (cleared by writing TX1REG)
 //0 = The EUSART1 transmit buffer is full
 
-//&& U1CON0bits.TXEN -  Transmit Enable bit SREN/CREN bits of RCxSTA (Register 27-2) override TXEN in Sync mode.
+//&& U2CON0bits.TXEN -  Transmit Enable bit SREN/CREN bits of RCxSTA (Register 27-2) override TXEN in Sync mode.
 // 1 = Transmit enabled
 // 0 = Transmit disabled
 
-//U1ERRIRbits.TXMTIF -  Transmit Shift Register Status bit
+//U2ERRIRbits.TXMTIF -  Transmit Shift Register Status bit
 // 1 = TSR empty TSR = Tx shift reg
 // 0 = TSR full
 
 //PIR3bits.U1RXIF -  EUSART1 Receive Interrupt Flag bit
-//1 = The EUSART1 receive buffer, U1RXB, is full (cleared by reading U1RXB)
+//1 = The EUSART1 receive buffer, U2RXB, is full (cleared by reading U2RXB)
 //0 = The EUSART1 receive buffer is empty
 
 

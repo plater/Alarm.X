@@ -73,11 +73,11 @@ void TMR5_Initialize(void)
     //CS LFINTOSC; 
     T5CLK = 0x04;
 
-    //TMR5H 180; 
-    TMR5H = 0xB4;
+    //TMR5H 195; 
+    TMR5H = 0xC3;
 
-    //TMR5L 81; 
-    TMR5L = 0x51;
+    //TMR5L 116; 
+    TMR5L = 0x74;
 
     // Clearing IF flag.
     PIR8bits.TMR5IF = 0;

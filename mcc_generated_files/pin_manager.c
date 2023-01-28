@@ -58,30 +58,30 @@ void PIN_MANAGER_Initialize(void)
     LATx registers
     */
     LATA = 0x00;
-    LATB = 0x02;
+    LATB = 0x01;
     LATC = 0x00;
 
     /**
     TRISx registers
     */
-    TRISA = 0xE9;
+    TRISA = 0xA9;
     TRISB = 0xC4;
-    TRISC = 0x01;
+    TRISC = 0x06;
 
     /**
     ANSELx registers
     */
-    ANSELC = 0xFA;
+    ANSELC = 0xF8;
     ANSELB = 0xC3;
-    ANSELA = 0x17;
+    ANSELA = 0x57;
 
     /**
     WPUx registers
     */
     WPUE = 0x00;
     WPUB = 0x04;
-    WPUA = 0xE8;
-    WPUC = 0x00;
+    WPUA = 0xA8;
+    WPUC = 0x04;
 
     /**
     RxyI2C registers
@@ -94,9 +94,9 @@ void PIN_MANAGER_Initialize(void)
     /**
     ODx registers
     */
-    ODCONA = 0x00;
-    ODCONB = 0x10;
-    ODCONC = 0x02;
+    ODCONA = 0x40;
+    ODCONB = 0x13;
+    ODCONC = 0x01;
 
     /**
     SLRCONx registers
@@ -120,10 +120,8 @@ void PIN_MANAGER_Initialize(void)
    
     
 	
-    U2RXPPS = 0x10;   //RC0->UART2:RX2;    
-    RB1PPS = 0x13;   //RB1->UART1:TX1;    
-    RC1PPS = 0x16;   //RC1->UART2:TX2;    
-    U1RXPPS = 0x0A;   //RB2->UART1:RX1;    
+    U2RXPPS = 0x0A;   //RB2->UART2:RX2;    
+    RB1PPS = 0x16;   //RB1->UART2:TX2;    
 }
   
 void PIN_MANAGER_IOC(void)
