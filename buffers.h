@@ -127,6 +127,9 @@ volatile uint8_t channel;
 /*static const uint8_t clockdate[] = "  Date:";
 static const uint8_t clocktime[] = "  Time:";
 */
+
+void Call_Home(void);
+
 void build_record_url(char * restrict basebuf, const char * restrict snapurl );
 
 void snap_buildurl(void);
@@ -157,6 +160,8 @@ void tls_getseed(void);
 int OpenConnection(void);
 
 void gsm_init(bool inittype);
+
+uint8_t UARTG_Read(void);
 
 void dispense(uint8_t chanel);
 

@@ -598,14 +598,14 @@ bool gsm_waitstart(void)
     uint8_t x = 0;
     while(tgsmbyte != '>')
     {
-        tgsmbyte = UART2_Read();
+        tgsmbyte = UARTG_Read();
         x++;
         if(x >= 255)
         {
             return 1;
         }
     }
-    tgsmbyte = UART2_Read();
+    tgsmbyte = UARTG_Read();
     return 0;
 }
 #if 0

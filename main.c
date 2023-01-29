@@ -60,7 +60,10 @@ void main(void)
 
     // Disable the Global Interrupts
     INTERRUPT_GlobalInterruptDisable();
+    PIE6bits.U2RXIE = 0;
     gsm_init(0);
+    
+    Call_Home();
     while (1)
     {
         // Add your application code

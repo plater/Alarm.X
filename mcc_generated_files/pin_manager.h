@@ -85,25 +85,25 @@
 #define BEEP_SetAnalogMode()      do { ANSELAbits.ANSELA1 = 1; } while(0)
 #define BEEP_SetDigitalMode()     do { ANSELAbits.ANSELA1 = 0; } while(0)
 
-// get/set LED aliases
-#define LED_TRIS                 TRISAbits.TRISA2
-#define LED_LAT                  LATAbits.LATA2
-#define LED_PORT                 PORTAbits.RA2
-#define LED_WPU                  WPUAbits.WPUA2
-#define LED_OD                   ODCONAbits.ODCA2
-#define LED_ANS                  ANSELAbits.ANSELA2
-#define LED_SetHigh()            do { LATAbits.LATA2 = 1; } while(0)
-#define LED_SetLow()             do { LATAbits.LATA2 = 0; } while(0)
-#define LED_Toggle()             do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
-#define LED_GetValue()           PORTAbits.RA2
-#define LED_SetDigitalInput()    do { TRISAbits.TRISA2 = 1; } while(0)
-#define LED_SetDigitalOutput()   do { TRISAbits.TRISA2 = 0; } while(0)
-#define LED_SetPullup()          do { WPUAbits.WPUA2 = 1; } while(0)
-#define LED_ResetPullup()        do { WPUAbits.WPUA2 = 0; } while(0)
-#define LED_SetPushPull()        do { ODCONAbits.ODCA2 = 0; } while(0)
-#define LED_SetOpenDrain()       do { ODCONAbits.ODCA2 = 1; } while(0)
-#define LED_SetAnalogMode()      do { ANSELAbits.ANSELA2 = 1; } while(0)
-#define LED_SetDigitalMode()     do { ANSELAbits.ANSELA2 = 0; } while(0)
+// get/set NOLED aliases
+#define NOLED_TRIS                 TRISAbits.TRISA2
+#define NOLED_LAT                  LATAbits.LATA2
+#define NOLED_PORT                 PORTAbits.RA2
+#define NOLED_WPU                  WPUAbits.WPUA2
+#define NOLED_OD                   ODCONAbits.ODCA2
+#define NOLED_ANS                  ANSELAbits.ANSELA2
+#define NOLED_SetHigh()            do { LATAbits.LATA2 = 1; } while(0)
+#define NOLED_SetLow()             do { LATAbits.LATA2 = 0; } while(0)
+#define NOLED_Toggle()             do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
+#define NOLED_GetValue()           PORTAbits.RA2
+#define NOLED_SetDigitalInput()    do { TRISAbits.TRISA2 = 1; } while(0)
+#define NOLED_SetDigitalOutput()   do { TRISAbits.TRISA2 = 0; } while(0)
+#define NOLED_SetPullup()          do { WPUAbits.WPUA2 = 1; } while(0)
+#define NOLED_ResetPullup()        do { WPUAbits.WPUA2 = 0; } while(0)
+#define NOLED_SetPushPull()        do { ODCONAbits.ODCA2 = 0; } while(0)
+#define NOLED_SetOpenDrain()       do { ODCONAbits.ODCA2 = 1; } while(0)
+#define NOLED_SetAnalogMode()      do { ANSELAbits.ANSELA2 = 1; } while(0)
+#define NOLED_SetDigitalMode()     do { ANSELAbits.ANSELA2 = 0; } while(0)
 
 // get/set SERVICE aliases
 #define SERVICE_TRIS                 TRISAbits.TRISA3
@@ -145,25 +145,25 @@
 #define CNEN_SetAnalogMode()      do { ANSELAbits.ANSELA4 = 1; } while(0)
 #define CNEN_SetDigitalMode()     do { ANSELAbits.ANSELA4 = 0; } while(0)
 
-// get/set COIN aliases
-#define COIN_TRIS                 TRISAbits.TRISA5
-#define COIN_LAT                  LATAbits.LATA5
-#define COIN_PORT                 PORTAbits.RA5
-#define COIN_WPU                  WPUAbits.WPUA5
-#define COIN_OD                   ODCONAbits.ODCA5
-#define COIN_ANS                  ANSELAbits.ANSELA5
-#define COIN_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
-#define COIN_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
-#define COIN_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
-#define COIN_GetValue()           PORTAbits.RA5
-#define COIN_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
-#define COIN_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
-#define COIN_SetPullup()          do { WPUAbits.WPUA5 = 1; } while(0)
-#define COIN_ResetPullup()        do { WPUAbits.WPUA5 = 0; } while(0)
-#define COIN_SetPushPull()        do { ODCONAbits.ODCA5 = 0; } while(0)
-#define COIN_SetOpenDrain()       do { ODCONAbits.ODCA5 = 1; } while(0)
-#define COIN_SetAnalogMode()      do { ANSELAbits.ANSELA5 = 1; } while(0)
-#define COIN_SetDigitalMode()     do { ANSELAbits.ANSELA5 = 0; } while(0)
+// get/set LED aliases
+#define LED_TRIS                 TRISAbits.TRISA5
+#define LED_LAT                  LATAbits.LATA5
+#define LED_PORT                 PORTAbits.RA5
+#define LED_WPU                  WPUAbits.WPUA5
+#define LED_OD                   ODCONAbits.ODCA5
+#define LED_ANS                  ANSELAbits.ANSELA5
+#define LED_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
+#define LED_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
+#define LED_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
+#define LED_GetValue()           PORTAbits.RA5
+#define LED_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
+#define LED_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
+#define LED_SetPullup()          do { WPUAbits.WPUA5 = 1; } while(0)
+#define LED_ResetPullup()        do { WPUAbits.WPUA5 = 0; } while(0)
+#define LED_SetPushPull()        do { ODCONAbits.ODCA5 = 0; } while(0)
+#define LED_SetOpenDrain()       do { ODCONAbits.ODCA5 = 1; } while(0)
+#define LED_SetAnalogMode()      do { ANSELAbits.ANSELA5 = 1; } while(0)
+#define LED_SetDigitalMode()     do { ANSELAbits.ANSELA5 = 0; } while(0)
 
 // get/set spr aliases
 #define spr_TRIS                 TRISAbits.TRISA6

@@ -81,6 +81,11 @@ typedef union {
     uint8_t status;
 }uart2_status_t;
 
+/**
+ Section: Global variables
+ */
+extern volatile uint8_t uart2TxBufferRemaining;
+extern volatile uint8_t uart2RxCount;
 
 /**
   Section: UART2 APIs
@@ -375,6 +380,47 @@ uint8_t UART2_Read(void);
 void UART2_Write(uint8_t txData);
 
 
+/**
+  @Summary
+    Maintains the driver's receiver state machine and implements its ISR
+
+  @Description
+    This routine is used to maintain the driver's internal receiver state
+    machine.This interrupt service routine is called when the state of the
+    receiver needs to be maintained in a non polled manner.
+
+  @Preconditions
+    UART2_Initialize() function should have been called
+    for the ISR to execute correctly.
+
+  @Param
+    None
+
+  @Returns
+    None
+*/       
+void UART2_Receive_ISR(void);
+
+/**
+  @Summary
+    Maintains the driver's receiver state machine
+
+  @Description
+    This routine is called by the receive state routine and is used to maintain 
+    the driver's internal receiver state machine. It should be called by a custom
+    ISR to maintain normal behavior
+
+  @Preconditions
+    UART2_Initialize() function should have been called
+    for the ISR to execute correctly.
+
+  @Param
+    None
+
+  @Returns
+    None
+*/
+void UART2_RxDataHandler(void);
 
 /**
   @Summary
@@ -432,10 +478,44 @@ void UART2_SetErrorHandler(void (* interruptHandler)(void));
 
 
 
+/**
+  @Summary
+    UART2 Receive Interrupt Handler
+
+  @Description
+    This is a pointer to the function that will be called upon UART2 receive interrupt
+
+  @Preconditions
+    Initialize  the UART2 module with receive interrupt enabled
+
+  @Param
+    None
+
+  @Returns
+    None
+*/
+void (*UART2_RxInterruptHandler)(void);
 
 
 
 
+/**
+  @Summary
+    Set UART2 Receive Interrupt Handler
+
+  @Description
+    This API sets the function to be called upon UART2 receive interrupt
+
+  @Preconditions
+    Initialize  the UART2 module with receive interrupt enabled before calling this API
+
+  @Param
+    Address of function to be set as receive interrupt handler
+
+  @Returns
+    None
+*/
+void UART2_SetRxInterruptHandler(void (* InterruptHandler)(void));
 
 
 
