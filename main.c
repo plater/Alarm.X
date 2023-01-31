@@ -62,7 +62,7 @@ void main(void)
     INTERRUPT_GlobalInterruptDisable();
     PIE6bits.U2RXIE = 0;
     gsm_init(0);
-    Read_SMS();
+    
     Call_Home();
     while (1)
     {
