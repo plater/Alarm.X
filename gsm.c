@@ -298,48 +298,6 @@ void Read_SMS(void)
     PIE6bits.U2RXIE = 0;
 }
 
-void Call_Home(void)
-{
-    uint8_t x;
-    uint8_t numstore[32] = {'A','T','D','+','2','7','7','6','6','5','2','0','0','0','7',';','\r'};
-    gsm_msg("AT+CUSD=1,\"*140*0766520007#\"\r"); //Send Dave's phone a call me
-    gsm_msg("ATD;\r");
-    gsm_msg(numstore);
-    x = Read_timeout1(gsmusd);
-    gsmbyte = gsmusd[1];
-    x = gsmusd[2];
-}
-
-/*
-    gsm_msg(smstxt);
-    gsm_receive(1, gsmmsg);
-    
-    gsm_msg(smsdel);
-    gsm_receive(1, gsmmsg);
-    
-    gsm_getbalance();
-    
-    gsm_msg(smslst);
-    gsm_receive(1,gsmmsg);
-    
-    gsm_msg(smdqry);
-    gsm_receive(1, gsmmsg);
-    
-    gsm_msg(engqry);
-    gsm_receive(2, gsmmsg);
-    
-    gsm_msg(netoff);
-    gsm_receive(2, gsmmsg);
-   
-    gsm_msg(facres);
-    gsm_receive(1, gsmmsg);
-    goto gsminit;
-    asm("nop");
-*/
-/*+CMGR: "REC UNREAD","+27820098372","","22/07/19,15:29:07+08"
-ùòèdc££KEY = 22d3cf4f-db05-4609-9773-2312375b4523:.Sent from 27766520007 from the my Vodacom app.Get 20 free sms per day.
-0*/
-
 int int_sms_notify(void)
 {
     
@@ -441,6 +399,48 @@ int gsmint_receive( uint8_t messagebuf[] )
     messagebuf[x] = 0;
     return x;
 }
+
+void Call_Home(void)
+{
+    uint8_t x;
+    uint8_t numstore[32] = {'A','T','D','+','2','7','7','6','6','5','2','0','0','0','7',';','\r'};
+    gsm_msg("AT+CUSD=1,\"*140*0766520007#\"\r"); //Send Dave's phone a call me
+    gsm_msg("ATD;\r");
+    gsm_msg(numstore);
+    x = Read_timeout1(gsmusd);
+    gsmbyte = gsmusd[1];
+    x = gsmusd[2];
+}
+
+/*
+    gsm_msg(smstxt);
+    gsm_receive(1, gsmmsg);
+    
+    gsm_msg(smsdel);
+    gsm_receive(1, gsmmsg);
+    
+    gsm_getbalance();
+    
+    gsm_msg(smslst);
+    gsm_receive(1,gsmmsg);
+    
+    gsm_msg(smdqry);
+    gsm_receive(1, gsmmsg);
+    
+    gsm_msg(engqry);
+    gsm_receive(2, gsmmsg);
+    
+    gsm_msg(netoff);
+    gsm_receive(2, gsmmsg);
+   
+    gsm_msg(facres);
+    gsm_receive(1, gsmmsg);
+    goto gsminit;
+    asm("nop");
+*/
+/*+CMGR: "REC UNREAD","+27820098372","","22/07/19,15:29:07+08"
+ùòèdc££KEY = 22d3cf4f-db05-4609-9773-2312375b4523:.Sent from 27766520007 from the my Vodacom app.Get 20 free sms per day.
+0*/
 
 
 #if 0
