@@ -200,7 +200,7 @@ int int_sms_notify();
 
 int gsmint_receive( uint8_t messagebuf[] );
 
-void Read_SMS(void);
+
 
 #ifdef	__cplusplus
 }

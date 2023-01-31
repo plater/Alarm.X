@@ -179,6 +179,8 @@ bool delay_10mS(uint16_t count);
 
 uint8_t Read_Service(void);
 
+void Read_SMS(void);
+
 void Orange_light(void);
 
 void Store_Count(void);
