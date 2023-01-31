@@ -224,7 +224,7 @@ uint8_t Read_timeout1(uint8_t *msgadd)
 {
     uint8_t v = 0;
     TMR5_Initialize(); //Currently set at 4 seconds
-    TMR5_WriteTimer(0X1CF3); //Should be 15 seconds wait for rdy
+    TMR5_WriteTimer(0); //Should be 16 seconds wait for rdy
     T5CONbits.TMR5ON = 1;
     U2CON0bits.RXEN = 1;
     U1FIFObits.RXBE = 1;
@@ -399,14 +399,16 @@ int gsmint_receive( uint8_t messagebuf[] )
     messagebuf[x] = 0;
     return x;
 }
-
+/*
+ Make call then 3ms 0\r\n then 16.8*/
 void Call_Home(void)
 {
     uint8_t x;
     uint8_t numstore[32] = {'A','T','D','+','2','7','7','6','6','5','2','0','0','0','7',';','\r'};
     gsm_msg("AT+CUSD=1,\"*140*0766520007#\"\r"); //Send Dave's phone a call me
-    gsm_msg("ATD;\r");
+    gsm_msg("ATD0766520007\r");
     gsm_msg(numstore);
+    gsm_receive(1, gsdate);
     x = Read_timeout1(gsmusd);
     gsmbyte = gsmusd[1];
     x = gsmusd[2];
