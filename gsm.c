@@ -162,8 +162,6 @@ void gsm_init(bool inittype)
             goto gsmwait;
     }
     led_switch(2); //LED off
-	gsm_msg((uint8_t*)"AT+CSQ\r");
-	gsm_receive(2, gsmusd);
     gsm_msg((uint8_t*)tsoftid);
     gsm_receive(2, gsmusd);
     gsm_msg("AT+CFUN?\r");
@@ -330,7 +328,7 @@ int int_sms_notify(void)
                     else// is a merchant key
                     {
                         led_switch(1); //Red =  merchant key stored
-                        store_merchkey();
+//                        store_merchkey();
                         while(SERVICE_PORT)
                         {
                             ClrWdt();
@@ -404,16 +402,71 @@ int gsmint_receive( uint8_t messagebuf[] )
 void Call_Home(void)
 {
     uint8_t x;
-    uint8_t numstore[32] = {'A','T','D','+','2','7','7','6','6','5','2','0','0','0','7',';','\r'};
-    gsm_msg("AT+CUSD=1,\"*140*0766520007#\"\r"); //Send Dave's phone a call me
-    gsm_msg("ATD0766520007\r");
-    gsm_msg(numstore);
-    gsm_receive(1, gsdate);
+    uint8_t mynumber[32] = {'A','T','D','+','2','7','7','6','6','5','2','0','0','0','7',';','\r'};
+ //   gsm_msg("ATD0766520007\r");
+    gsm_msg(mynumber);
     x = Read_timeout1(gsmusd);
     gsmbyte = gsmusd[1];
     x = gsmusd[2];
 }
 
+uint8_t Get_Battery(void)
+{
+    uint8_t x;
+    gsm_msg("AT+CBC\r");
+    gsm_receive(2, gsmtim);
+    uint8_t *msgbuf = gsmtim + 10;
+    x = atoi(msgbuf);
+    return(x) ;
+}
+
+void Call_Me(void)
+{
+    gsm_msg("AT+CUSD=1,\"*140*0766520007#\"\r"); //Send Dave's phone a call me
+}
+
+uint8_t Get_Signal(void)
+{
+    uint8_t x;
+    uint8_t* y;
+	gsm_msg((uint8_t*)"AT+CSQ\r");
+	gsm_receive(2, gsmusd);
+    y = gsmusd + 7;
+    x = atoi(y);
+    return(x);
+}
+/* Decode Receiver signal strength value
+x =  dBm 	Condition
+2 	-109 	Marginal
+3 	-107 	Marginal
+4 	-105 	Marginal
+5 	-103 	Marginal
+6 	-101 	Marginal
+7 	-99 	Marginal
+8 	-97 	Marginal
+9 	-95 	Marginal
+10 	-93 	OK
+11 	-91 	OK
+12 	-89 	OK
+13 	-87 	OK
+14 	-85 	OK
+15 	-83 	Good
+16 	-81 	Good
+17 	-79 	Good
+18 	-77 	Good
+19 	-75 	Good
+20 	-73 	Excellent
+21 	-71 	Excellent
+22 	-69 	Excellent
+23 	-67 	Excellent
+24 	-65 	Excellent
+25 	-63 	Excellent
+26 	-61 	Excellent
+27 	-59 	Excellent
+28 	-57 	Excellent
+29 	-55 	Excellent
+30 	-53 	Excellent
+ */
 /*
     gsm_msg(smstxt);
     gsm_receive(1, gsmmsg);

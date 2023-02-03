@@ -44,7 +44,10 @@
 #include "mcc_generated_files/mcc.h"
 #include "buffers.h"
 /*
-                         Main application
+ * Values from sanispray
+    Timer0 = 1 s
+    Timer1 = 38.016 ms = 0xFB5C 1:1 divide
+    Timer2 = 1 s
  */
 void main(void)
 {
@@ -62,8 +65,11 @@ void main(void)
     INTERRUPT_GlobalInterruptDisable();
     PIE6bits.U2RXIE = 0;
     gsm_init(0);
-    Read_SMS();
+    gsmbyte = Get_Signal();
+    gsmbyte = Get_Battery();
     Call_Home();
+    Call_Me();
+    Read_SMS();
     while (1)
     {
         // Add your application code

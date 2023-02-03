@@ -84,10 +84,10 @@ uint16_t index;
 
 
 uint8_t  gsmtim[23];
-uint8_t  qrbuffer[256];
-char     base64buf[64];
-char     snap64buf[256];
-uint8_t  merchkey[40];
+//uint8_t  qrbuffer[256];
+//char     base64buf[64];
+//char     snap64buf[256];
+//uint8_t  merchkey[40];
 uint16_t  prices[8];
 
 uint8_t qchan[2];
@@ -128,7 +128,7 @@ volatile uint8_t channel;
 static const uint8_t clocktime[] = "  Time:";
 */
 
-void Call_Home(void);
+
 
 void build_record_url(char * restrict basebuf, const char * restrict snapurl );
 
@@ -169,9 +169,9 @@ uint8_t Read_timeout(uint8_t *msgadd);
 
 uint8_t Read_timeout1(uint8_t *msgadd);
 
-void base64_encode (const uint8_t *in, idx_t inlen, uint8_t *out, idx_t outlen);
+//void base64_encode (const uint8_t *in, idx_t inlen, uint8_t *out, idx_t outlen);
 
-void store_merchkey(void);
+//void store_merchkey(void);
 
 void mkey_init(void);
 
@@ -180,6 +180,14 @@ bool delay_10mS(uint16_t count);
 uint8_t Read_Service(void);
 
 void Read_SMS(void);
+
+void Call_Me(void);
+
+void Call_Home(void);
+
+uint8_t Get_Battery(void);
+
+uint8_t Get_Signal(void);
 
 void Orange_light(void);
 
