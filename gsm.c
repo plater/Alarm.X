@@ -415,7 +415,7 @@ uint8_t Get_Battery(void)
     uint8_t x;
     gsm_msg("AT+CBC\r");
     gsm_receive(2, gsmtim);
-    uint8_t *msgbuf = gsmtim + 10;
+    uint8_t *msgbuf = gsmtim + 8;
     x = atoi(msgbuf);
     return(x) ;
 }
