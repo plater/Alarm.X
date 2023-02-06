@@ -13,7 +13,6 @@ extern "C" {
 #endif
     
 #include <string.h>
-#include "vend.h"
 #include "buffers.h"
 #include <xc.h>
 #include "mcc_generated_files/mcc.h"
@@ -141,8 +140,6 @@ const uint8_t clocktime[] = "Time: ";
 const uint8_t clockdate[] = "Date: ";
 const uint8_t coinsout[] = "coins out ";
 const uint8_t coinvalu[] = " @ coin = R";
-
-void gsm_zerobuff(uint8_t* gsmsgbuf, uint16_t count );
 
 void gsm_waitx(void);
 

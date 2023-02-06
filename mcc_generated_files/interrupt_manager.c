@@ -62,9 +62,9 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     {
         UART2_RxInterruptHandler();
     }
-    else if(PIE4bits.TMR2IE == 1 && PIR4bits.TMR2IF == 1)
+    else if(PIE0bits.IOCIE == 1 && PIR0bits.IOCIF == 1)
     {
-        TMR2_ISR();
+        PIN_MANAGER_IOC();
     }
     else
     {

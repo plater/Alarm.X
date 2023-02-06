@@ -41,7 +41,7 @@
 typedef ptrdiff_t idx_t;
 
 #include <xc.h> // include processor files - each processor file is guarded.  
-
+#include "sonar.h"
 
 #endif	//XC_HEADER_TEMPLATE_H
 
@@ -65,7 +65,9 @@ uint8_t credit;
 //moble network code 01 = Vodacom, 10 or 12 = Mtn
 //uint8_t mncbyte = 0;
 //gsm scratch pad
-uint8_t gsmmsg[512];
+uint8_t gsmmsg[256];
+
+uint16_t distant[512];
 //sms storage
 //uint8_t gsmums[512];
 //ussd storage
@@ -88,6 +90,8 @@ uint8_t  gsmtim[23];
 //char     base64buf[64];
 //char     snap64buf[256];
 //uint8_t  merchkey[40];
+uint16_t distantcount;
+#if 0
 uint16_t  prices[8];
 
 uint8_t qchan[2];
@@ -103,6 +107,7 @@ uint8_t * searchbufa;
 
 int price;
 uint8_t channum;
+#endif
 /**dispense related
  */
 volatile uint8_t cash;
@@ -116,7 +121,6 @@ volatile uint8_t vcashout[2];
 volatile uint16_t pvcash;
 volatile __uint24 pnvcash;
 volatile uint8_t senspos;
-volatile uint8_t dummy[8];
 volatile uint8_t highprice;
 volatile uint8_t lowprice;
 volatile uint8_t chanmask;
@@ -128,7 +132,7 @@ volatile uint8_t channel;
 static const uint8_t clocktime[] = "  Time:";
 */
 
-
+void gsm_zerobuff(uint8_t* gsmsgbuf, uint16_t count );
 
 void build_record_url(char * restrict basebuf, const char * restrict snapurl );
 
@@ -198,6 +202,7 @@ void Retrieve_Count(void);
 void DATAEE_WriteWord(uint16_t bAdd, uint16_t bData);
 
 uint16_t DATAEE_ReadWord(uint16_t bAdd);
+
 
 #ifdef	__cplusplus
 extern "C" {

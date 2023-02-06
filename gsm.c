@@ -342,7 +342,7 @@ int int_sms_notify(void)
                 else //Is a price set message
                 {
                     
-                    price_set();
+                   // price_set();
                     gsm_msg(smsdel);//"AT+CMGDA=\"DEL ALL\"\r"
                     gsm_receive(1, gsmtim);
                     __delay_ms(1000);

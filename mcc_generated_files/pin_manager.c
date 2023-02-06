@@ -51,6 +51,8 @@
 
 
 
+void (*IOCCF6_InterruptHandler)(void);
+
 
 void PIN_MANAGER_Initialize(void)
 {
@@ -64,14 +66,14 @@ void PIN_MANAGER_Initialize(void)
     /**
     TRISx registers
     */
-    TRISA = 0xDB;
+    TRISA = 0x5F;
     TRISB = 0xE4;
-    TRISC = 0x3E;
+    TRISC = 0x7E;
 
     /**
     ANSELx registers
     */
-    ANSELC = 0xF8;
+    ANSELC = 0xB8;
     ANSELB = 0xC3;
     ANSELA = 0xFE;
 
@@ -79,9 +81,9 @@ void PIN_MANAGER_Initialize(void)
     WPUx registers
     */
     WPUE = 0x00;
-    WPUB = 0x04;
-    WPUA = 0x88;
-    WPUC = 0x04;
+    WPUB = 0x00;
+    WPUA = 0x89;
+    WPUC = 0x44;
 
     /**
     RxyI2C registers
@@ -96,7 +98,7 @@ void PIN_MANAGER_Initialize(void)
     */
     ODCONA = 0x40;
     ODCONB = 0x13;
-    ODCONC = 0x01;
+    ODCONC = 0x81;
 
     /**
     SLRCONx registers
@@ -114,10 +116,23 @@ void PIN_MANAGER_Initialize(void)
     INLVLE = 0x08;
 
 
+    /**
+    IOCx registers 
+    */
+    //interrupt on change for group IOCCF - flag
+    IOCCFbits.IOCCF6 = 0;
+    //interrupt on change for group IOCCN - negative
+    IOCCNbits.IOCCN6 = 1;
+    //interrupt on change for group IOCCP - positive
+    IOCCPbits.IOCCP6 = 1;
 
 
 
+    // register default IOC callback functions at runtime; use these methods to register a custom function
+    IOCCF6_SetInterruptHandler(IOCCF6_DefaultInterruptHandler);
    
+    // Enable IOCI interrupt 
+    PIE0bits.IOCIE = 1; 
     
 	
     U2RXPPS = 0x0A;   //RB2->UART2:RX2;    
@@ -126,6 +141,41 @@ void PIN_MANAGER_Initialize(void)
   
 void PIN_MANAGER_IOC(void)
 {   
+	// interrupt on change for pin IOCCF6
+    if(IOCCFbits.IOCCF6 == 1)
+    {
+        IOCCF6_ISR();  
+    }	
+}
+
+/**
+   IOCCF6 Interrupt Service Routine
+*/
+void IOCCF6_ISR(void) {
+
+    // Add custom IOCCF6 code
+
+    // Call the interrupt handler for the callback registered at runtime
+    if(IOCCF6_InterruptHandler)
+    {
+        IOCCF6_InterruptHandler();
+    }
+    IOCCFbits.IOCCF6 = 0;
+}
+
+/**
+  Allows selecting an interrupt handler for IOCCF6 at application runtime
+*/
+void IOCCF6_SetInterruptHandler(void (* InterruptHandler)(void)){
+    IOCCF6_InterruptHandler = InterruptHandler;
+}
+
+/**
+  Default interrupt handler for IOCCF6
+*/
+void IOCCF6_DefaultInterruptHandler(void){
+    // add your IOCCF6 interrupt custom code
+    // or set custom function using IOCCF6_SetInterruptHandler()
 }
 
 /**

@@ -5,12 +5,12 @@
          <string>class com.microchip.mcc.mcu8.dmaManager.submodule.DMAModules</string>
       </entry>
       <entry>
-         <string>com.microchip.mcc.boardsupportlibrary.BoardSuppportLibraryLibraryModule</string>
-         <string>class com.microchip.mcc.protocolServices.base.modules.librarymodule.LibraryModule</string>
-      </entry>
-      <entry>
          <string>DMA CHANNEL1</string>
          <string>class com.microchip.mcc.mcu8.dmaManager.submodule.DMAModules</string>
+      </entry>
+      <entry>
+         <string>com.microchip.mcc.boardsupportlibrary.BoardSuppportLibraryLibraryModule</string>
+         <string>class com.microchip.mcc.protocolServices.base.modules.librarymodule.LibraryModule</string>
       </entry>
       <entry>
          <string>PMD</string>
@@ -49,12 +49,12 @@
          <string>class com.microchip.mcc.mcu8.systemManager.osc.Osc</string>
       </entry>
       <entry>
-         <string>DMA Manager</string>
-         <string>class com.microchip.mcc.mcu8.dmaManager.DMA</string>
-      </entry>
-      <entry>
          <string>WWDT</string>
          <string>class com.microchip.mcc.mcu8.systemManager.wwdt.WWDT</string>
+      </entry>
+      <entry>
+         <string>DMA Manager</string>
+         <string>class com.microchip.mcc.mcu8.dmaManager.DMA</string>
       </entry>
       <entry>
          <string>TMR6</string>
@@ -280,7 +280,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="iocUserSet RC6"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ODCONA" settingAlias="ODCA1" alias="disabled"/>
@@ -376,7 +376,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR1" name="inputMode"/>
-         <value>periodMode</value>
+         <value>tmrMode</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="TMR5G"/>
@@ -579,11 +579,11 @@
          <value>15</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="None"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG1H" settingAlias="PR1WAY" alias="OFF"/>
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG1H" settingAlias="PR1WAY" alias="OFF"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="None"/>
          <value>0</value>
       </entry>
       <entry>
@@ -631,11 +631,11 @@
          <value>disabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TGCON" settingAlias="TGGO" alias="ready"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TGCON" settingAlias="TGVAL" alias="enabled"/>
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TGCON" settingAlias="TGVAL" alias="enabled"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TGCON" settingAlias="TGGO" alias="ready"/>
          <value>1</value>
       </entry>
       <entry>
@@ -844,7 +844,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="WPUB" settingAlias="WPUB2"/>
-         <value>set</value>
+         <value>clear</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCCP" settingAlias="IOCCP2" alias="disabled"/>
@@ -1012,7 +1012,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="WPUA"/>
-         <value>136</value>
+         <value>137</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="ioc RA3"/>
@@ -1124,7 +1124,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="WPUB"/>
-         <value>4</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="ioc RB5"/>
@@ -1272,7 +1272,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="ioc RC6"/>
-         <value>none</value>
+         <value>any</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCAP" settingAlias="IOCAP3" alias="disabled"/>
@@ -1343,12 +1343,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART2" registerAlias="UFIFO" settingAlias="RXBE" alias="empty"/>
-         <value>1</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR5" registerAlias="TGATE" settingAlias="TGSS" alias="CCP2OUT"/>
          <value>10</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART2" registerAlias="UFIFO" settingAlias="RXBE" alias="empty"/>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="WPUB" settingAlias="WPUB0"/>
@@ -1364,7 +1364,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR5" name="inputMode"/>
-         <value>tmrMode</value>
+         <value>periodMode</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="TRISC" settingAlias="TRISC4" alias="output"/>
@@ -1387,10 +1387,6 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T1GPPS%aux2"/>
-         <value>%DESELECT%</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="TMRH" settingAlias="TMRH"/>
          <value>254</value>
       </entry>
@@ -1403,12 +1399,16 @@
          <value>0.004129032</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T1GPPS%aux7"/>
+         <value>%DESELECT%</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="DMA1A"/>
          <value>19</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="TMRH" settingAlias="TMRH"/>
-         <value>225</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="INLVLA" settingAlias="INLVLA2" alias="TTL_input"/>
@@ -1416,7 +1416,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR5" registerAlias="TMRH" settingAlias="TMRH"/>
-         <value>0</value>
+         <value>13</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="CSW"/>
@@ -1583,11 +1583,11 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="DMA CHANNEL2" registerAlias="DMASSZL"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="PMD" registerAlias="PMD0" settingAlias="HLVDMD" alias="HLVD enabled"/>
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="PMD" registerAlias="PMD0" settingAlias="HLVDMD" alias="HLVD enabled"/>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="DMA CHANNEL2" registerAlias="DMASSZL"/>
          <value>0</value>
       </entry>
       <entry>
@@ -1884,7 +1884,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR1" registerAlias="TCON"/>
-         <value>51</value>
+         <value>2</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR2" registerAlias="TCON"/>
@@ -1892,7 +1892,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISA" settingAlias="TRISA7"/>
-         <value>input</value>
+         <value>output</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR3" registerAlias="TCON"/>
@@ -1955,12 +1955,12 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR2" registerAlias="TCON" settingAlias="TOUTPS" alias="1:8"/>
-         <value>7</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR5" registerAlias="TGATE" settingAlias="TGSS" alias="CLC2OUT"/>
          <value>24</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR2" registerAlias="TCON" settingAlias="TOUTPS" alias="1:8"/>
+         <value>7</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR2" registerAlias="TCON" settingAlias="TOUTPS" alias="1:7"/>
@@ -2011,12 +2011,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T4INPPS%aux3"/>
-         <value>%DESELECT%</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR2" registerAlias="THLT" settingAlias="TPSYNC" alias="Synchronized"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T4INPPS%aux2"/>
+         <value>%DESELECT%</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TGATE" settingAlias="TGSS" alias="CCP1OUT"/>
@@ -2252,7 +2252,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="TCON" settingAlias="TCKPS"/>
-         <value>1:8</value>
+         <value>1:1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR2" registerAlias="TCON" settingAlias="TCKPS"/>
@@ -2287,12 +2287,12 @@
          <value>20</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="U1"/>
-         <value>30</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="CustomIRFC"/>
          <value>64_MHz</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="U1"/>
+         <value>30</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="U2"/>
@@ -2403,12 +2403,12 @@
          <value>ST_input</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T6INPPS%aux0"/>
-         <value>%DESELECT%</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG3L" settingAlias="WDTCPS" alias="WDTCPS_17"/>
          <value>17</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T6INPPS%aux5"/>
+         <value>%DESELECT%</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG3L" settingAlias="WDTCPS" alias="WDTCPS_18"/>
@@ -2503,12 +2503,12 @@
          <value>54</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="TMR2"/>
-         <value>34</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="PMD" registerAlias="PMD0" settingAlias="HLVDMD"/>
          <value>HLVD enabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="TMR2"/>
+         <value>34</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="CCP4PPS" settingAlias="CCP4PPS"/>
@@ -2531,12 +2531,12 @@
          <value>57</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="MEMORY" registerAlias="NVMCON1" settingAlias="WRERR"/>
-         <value>normal_completion</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR4" registerAlias="THLT" settingAlias="TMODE" alias="Resets at falling TMR4_ers"/>
          <value>5</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="MEMORY" registerAlias="NVMCON1" settingAlias="WRERR"/>
+         <value>normal_completion</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG2H" settingAlias="STVREN" alias="ON"/>
@@ -2584,7 +2584,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="WPUC"/>
-         <value>4</value>
+         <value>68</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="INLVLA" settingAlias="INLVLA6"/>
@@ -2623,12 +2623,12 @@
          <value>75</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="CLC4"/>
-         <value>81</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="PMD" registerAlias="PMD3" settingAlias="CCP2MD" alias="CCP2 disabled"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="CLC4"/>
+         <value>81</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TGATE" settingAlias="TGSS" alias="CLC3OUT"/>
@@ -2739,12 +2739,12 @@
          <value>easysetup</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="SMT1PWA"/>
-         <value>15</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="PMD" registerAlias="PMD3" settingAlias="PWM8MD" alias="PWM8 disabled"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="SMT1PWA"/>
+         <value>15</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="TMRGI" settingAlias="enable"/>
@@ -2812,7 +2812,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RA5"/>
-         <value/>
+         <value>LED</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RA6"/>
@@ -2824,7 +2824,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RA7"/>
-         <value/>
+         <value>ALARM</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG4L" settingAlias="SAFEN"/>
@@ -2840,7 +2840,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RA2"/>
-         <value>LED</value>
+         <value/>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RA3"/>
@@ -2856,7 +2856,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR5" name="reloadValue"/>
-         <value>0</value>
+         <value>3536</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="I2C1SCLPPS" settingAlias="I2C1SCLPPS"/>
@@ -3039,16 +3039,16 @@
          <value>7</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG3H" settingAlias="WDTCWS" alias="WDTCWS_6"/>
+         <value>6</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="U2RX"/>
          <value>50</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMACON1" settingAlias="SMODE" alias="unchanged"/>
          <value>0</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG3H" settingAlias="WDTCWS" alias="WDTCWS_6"/>
-         <value>6</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG3H" settingAlias="WDTCWS" alias="WDTCWS_5"/>
@@ -3175,12 +3175,12 @@
          <value>disabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TCLK" settingAlias="TMRCS" alias="CLC3OUT"/>
-         <value>15</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR4" registerAlias="THLT" settingAlias="TMODE" alias="Starts on rising edge on TMR4_ers"/>
          <value>17</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TCLK" settingAlias="TMRCS" alias="CLC3OUT"/>
+         <value>15</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="SPI1SCKPPS"/>
@@ -3251,12 +3251,12 @@
          <value>disabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR6" registerAlias="TMRI" settingAlias="enable"/>
-         <value>disabled</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TCLK" settingAlias="TMRCS" alias="LFINTOSC"/>
          <value>4</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR6" registerAlias="TMRI" settingAlias="enable"/>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR5" registerAlias="TMRI" settingAlias="enable"/>
@@ -3292,7 +3292,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR2" registerAlias="TMRI" settingAlias="enable"/>
-         <value>enabled</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="PMD" registerAlias="PMD0" settingAlias="SYSCMD" alias="SYSCLK enabled"/>
@@ -3323,12 +3323,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR6" registerAlias="TCLKCON" settingAlias="TCS" alias="NCO1OUT"/>
-         <value>9</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR4" registerAlias="TCLKCON" settingAlias="TCS" alias="CLC3_OUT"/>
          <value>13</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR6" registerAlias="TCLKCON" settingAlias="TCS" alias="NCO1OUT"/>
+         <value>9</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR2" registerAlias="TCON" settingAlias="TCKPS" alias="1:1"/>
@@ -3544,7 +3544,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="TCLK" settingAlias="TMRCS"/>
-         <value>LFINTOSC</value>
+         <value>MFINTOSC_31.25kHz</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCAP" settingAlias="IOCAP7" alias="enabled"/>
@@ -3628,7 +3628,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL2" registerAlias="DMAAI" settingAlias="order"/>
-         <value>1</value>
+         <value>2</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="CCP2"/>
@@ -3636,7 +3636,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL1" registerAlias="DMAAI" settingAlias="order"/>
-         <value>5</value>
+         <value>6</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="CCP1"/>
@@ -3716,7 +3716,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR1" name="timerPeriodMax"/>
-         <value>16.912516129</value>
+         <value>2.097152</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ANSELA" settingAlias="ANSELA1" alias="digital"/>
@@ -3744,11 +3744,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR1" registerAlias="TMRL"/>
-         <value>186</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL2" registerAlias="DMADCNTI" settingAlias="order"/>
-         <value>2</value>
+         <value>3</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="CLC4"/>
@@ -3768,7 +3768,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL1" registerAlias="DMADCNTI" settingAlias="order"/>
-         <value>6</value>
+         <value>7</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="CLC2"/>
@@ -3907,12 +3907,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="U2"/>
-         <value>53</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="System Module" registerAlias="CONFIG1L"/>
          <value>4</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="U2"/>
+         <value>53</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="U1"/>
@@ -3968,7 +3968,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR5" registerAlias="TMRL"/>
-         <value>0</value>
+         <value>208</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="pinEnable"/>
@@ -4103,12 +4103,12 @@
          <value>16</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMACON1" settingAlias="SMR" alias="SFR"/>
-         <value>0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG3H" settingAlias="WDTCCS" alias="MFINTOSC"/>
          <value>8</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMACON1" settingAlias="SMR" alias="SFR"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="SPI1"/>
@@ -4207,12 +4207,12 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL1" registerAlias="DMAORI" settingAlias="flag"/>
-         <value>disabled</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="PMD" registerAlias="PMD2" settingAlias="CMP1MD" alias="CMP1 disabled"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL1" registerAlias="DMAORI" settingAlias="flag"/>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="WPUB" settingAlias="WPUB0" alias="clear"/>
@@ -4427,12 +4427,12 @@
          <value>disabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="TMR1G"/>
-         <value>33</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="PMD" registerAlias="PMD3" settingAlias="PWM7MD" alias="PWM7 enabled"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="TMR1G"/>
+         <value>33</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="LATC" settingAlias="LATC0"/>
@@ -4644,11 +4644,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL1" registerAlias="DMASCNTI" settingAlias="order"/>
-         <value>7</value>
+         <value>8</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL2" registerAlias="DMASCNTI" settingAlias="order"/>
-         <value>3</value>
+         <value>4</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="WWDT" registerAlias="WDTCON0" settingAlias="WDTPS" alias="1:262144"/>
@@ -4672,7 +4672,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="ODCONC" settingAlias="ODCC7"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="UART2" registerAlias="UERRIR" settingAlias="ABDOVF"/>
@@ -4743,12 +4743,12 @@
          <value>27</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TCLK" settingAlias="TMRCS" alias="HFINTOSC"/>
-         <value>3</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR4" registerAlias="THLT" settingAlias="TCKSYNC" alias="Synchronized"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TCLK" settingAlias="TMRCS" alias="HFINTOSC"/>
+         <value>3</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ANSELA" settingAlias="ANSELA5" alias="digital"/>
@@ -4763,12 +4763,12 @@
          <value>10</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR6" registerAlias="TCLKCON" settingAlias="TCS"/>
-         <value>LFINTOSC</value>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T3CKIPPS%aux3"/>
+         <value>%DESELECT%</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T3CKIPPS%aux4"/>
-         <value>%DESELECT%</value>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR6" registerAlias="TCLKCON" settingAlias="TCS"/>
+         <value>LFINTOSC</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR5" registerAlias="TCLK" settingAlias="TMRCS" alias="MFINTOSC_500kHz"/>
@@ -4984,7 +4984,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="TCON" settingAlias="TMRON"/>
-         <value>enabled</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR2" registerAlias="TCON" settingAlias="TMRON"/>
@@ -5152,7 +5152,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISA" settingAlias="TRISA2"/>
-         <value>output</value>
+         <value>input</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="INT2"/>
@@ -5223,12 +5223,12 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="TCON" settingAlias="nTSYNC"/>
-         <value>synchronize</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR5" registerAlias="TGATE" settingAlias="TGSS" alias="CLC1OUT"/>
          <value>23</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="TCON" settingAlias="nTSYNC"/>
+         <value>synchronize</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISA" settingAlias="TRISA3"/>
@@ -5249,6 +5249,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="UART2" registerAlias="UP1L"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T0CKIPPS%aux10"/>
+         <value>%DESELECT%</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="MEMORY" name="END_FLASH"/>
@@ -5496,7 +5500,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RC6"/>
-         <value>output</value>
+         <value>input</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="trisUserSetRC3"/>
@@ -5527,12 +5531,12 @@
          <value>4</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR6" registerAlias="TCLKCON" settingAlias="TCS" alias="CLKR"/>
-         <value>8</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR4" registerAlias="THLT" settingAlias="TMODE" alias="Starts at falling edge and resets on TMR4_ers=1"/>
          <value>15</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR6" registerAlias="TCLKCON" settingAlias="TCS" alias="CLKR"/>
+         <value>8</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="tckiPin"/>
@@ -5696,7 +5700,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RA2"/>
-         <value>output</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="LVD"/>
@@ -5732,7 +5736,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RA7"/>
-         <value>disabled</value>
+         <value>output</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR0" registerAlias="TMRI" settingAlias="flag"/>
@@ -5776,7 +5780,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RA5"/>
-         <value>disabled</value>
+         <value>output</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR6" registerAlias="TMRI" settingAlias="flag"/>
@@ -5848,7 +5852,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR1" name="timerPeriodMin"/>
-         <value>0.000258065</value>
+         <value>0.000032</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="DMA CHANNEL2" registerAlias="DMADSZH"/>
@@ -5972,7 +5976,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="ANSELC"/>
-         <value>248</value>
+         <value>184</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART2" registerAlias="UCON0" settingAlias="MODE" alias="Asynchronous 9-bit mode"/>
@@ -6112,7 +6116,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCI" settingAlias="enable"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="LATC" settingAlias="LATC1" alias="set"/>
@@ -6135,12 +6139,12 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL2" registerAlias="DMACON1" settingAlias="DSTP"/>
-         <value>not cleared</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG4H" settingAlias="WRTSAF" alias="ON"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL2" registerAlias="DMACON1" settingAlias="DSTP"/>
+         <value>not cleared</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="trisUserSetRA4"/>
@@ -6280,7 +6284,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR5" registerAlias="TMRL" settingAlias="TMRL"/>
-         <value>0</value>
+         <value>208</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="timerClockActual"/>
@@ -6288,7 +6292,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="TMRL" settingAlias="TMRL"/>
-         <value>186</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="TMRL" settingAlias="TMRL"/>
@@ -6304,7 +6308,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="TRISC"/>
-         <value>62</value>
+         <value>126</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="SLRCONB" settingAlias="SLRB3" alias="maximum"/>
@@ -6412,7 +6416,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="ODCONC"/>
-         <value>1</value>
+         <value>129</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="INLVLC" settingAlias="INLVLC7"/>
@@ -6683,12 +6687,12 @@
          <value>not empty</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="INT0"/>
-         <value>8</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="WWDT" registerAlias="WDTCON0" settingAlias="WDTSEN" alias="ON"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="INT0"/>
+         <value>8</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="INLVLC" settingAlias="INLVLC2" alias="ST_input"/>
@@ -6696,7 +6700,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR5" name="timerClockActual"/>
-         <value>0.059128</value>
+         <value>0.0625</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="ODCONC" settingAlias="ODCC1"/>
@@ -6748,7 +6752,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISC" settingAlias="TRISC6"/>
-         <value>output</value>
+         <value>input</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR5" registerAlias="TCON" settingAlias="TRD16" alias="enabled"/>
@@ -6776,7 +6780,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="TRISA"/>
-         <value>219</value>
+         <value>95</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR2" registerAlias="TCLKCON" settingAlias="TCS" alias="NCO1OUT"/>
@@ -7007,11 +7011,11 @@
          <value>14</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="MEMORY" registerAlias="TBLPTRU"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR4" registerAlias="THLT" settingAlias="TMODE" alias="Software control"/>
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR4" registerAlias="THLT" settingAlias="TMODE" alias="Software control"/>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="MEMORY" registerAlias="TBLPTRU"/>
          <value>0</value>
       </entry>
       <entry>
@@ -7035,12 +7039,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="CWG1"/>
-         <value>38</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="PMD" registerAlias="PMD1" settingAlias="TMR2MD"/>
          <value>TMR2 enabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="CWG1"/>
+         <value>38</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="CWG2"/>
@@ -7111,12 +7115,12 @@
          <value>3</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART2" registerAlias="UCON0" settingAlias="MODE" alias="Asynchronous 8-bit mode"/>
-         <value>0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR5" registerAlias="TGCON" settingAlias="TGSPM" alias="enabled"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART2" registerAlias="UCON0" settingAlias="MODE" alias="Asynchronous 8-bit mode"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="IOCAP"/>
@@ -7200,7 +7204,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="DMA Manager" name="dmaTable"/>
-         <value>{&quot;dataArray&quot;:[{&quot;DMA Channels&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;--NONE--&quot;,&quot;text&quot;:&quot;DMA CHANNEL1&quot;,&quot;value&quot;:&quot;false&quot;},&quot;id&quot;:&quot;DMA Channels_rowCount_0&quot;},&quot;Src Module&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;--NONE--,MEMORY,TMR0,TMR4,TMR6,TMR1,TMR3,UART2,TMR2,TMR5&quot;,&quot;text&quot;:&quot;--NONE--&quot;,&quot;value&quot;:&quot;--NONE--&quot;},&quot;id&quot;:&quot;Src Module_rowCount_0&quot;},&quot;Src Region&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;SFR#disabled,GPR#enabled,Program Flash#enabled,Data EEPROM#enabled&quot;,&quot;text&quot;:&quot;GPR&quot;,&quot;value&quot;:&quot;GPR&quot;},&quot;id&quot;:&quot;Src Region_rowCount_0&quot;},&quot;Src SFR&quot;:{&quot;Src SFR&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;},&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;},&quot;id&quot;:&quot;Src SFR_rowCount_0&quot;},&quot;Src VarName&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;SrcVarName0&quot;,&quot;value&quot;:&quot;SrcVarName0&quot;},&quot;Src VarName&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;SrcVarName0&quot;,&quot;value&quot;:&quot;SrcVarName0&quot;},&quot;id&quot;:&quot;Src VarName_rowCount_0&quot;},&quot;Src VarSize&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;10&quot;,&quot;value&quot;:&quot;10&quot;},&quot;id&quot;:&quot;Src VarSize_rowCount_0&quot;,&quot;Src VarSize&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;10&quot;,&quot;value&quot;:&quot;10&quot;}},&quot;Src Address&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;Enter Address0&quot;,&quot;value&quot;:&quot;Enter Address0&quot;},&quot;id&quot;:&quot;Src Address_rowCount_0&quot;,&quot;Src Address&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;Enter Address0&quot;,&quot;value&quot;:&quot;Enter Address0&quot;}},&quot;Src Mode&quot;:{&quot;Src Mode&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;decremented,incremented,unchanged&quot;,&quot;text&quot;:&quot;unchanged&quot;,&quot;value&quot;:&quot;unchanged&quot;},&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;decremented,incremented,unchanged&quot;,&quot;text&quot;:&quot;unchanged&quot;,&quot;value&quot;:&quot;unchanged&quot;},&quot;id&quot;:&quot;Src Mode_rowCount_0&quot;},&quot;Src Message Size&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;1&quot;,&quot;value&quot;:&quot;1&quot;},&quot;Src Message Size&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;1&quot;,&quot;value&quot;:&quot;1&quot;},&quot;id&quot;:&quot;Src Message Size_rowCount_0&quot;},&quot;Dst Module&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;--NONE--,MEMORY,TMR0,TMR4,TMR6,TMR1,TMR3,UART2,TMR2,TMR5&quot;,&quot;text&quot;:&quot;--NONE--&quot;,&quot;value&quot;:&quot;--NONE--&quot;},&quot;id&quot;:&quot;Dst Module_rowCount_0&quot;},&quot;Dst Region&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;SFR,GPR&quot;,&quot;text&quot;:&quot;GPR&quot;,&quot;value&quot;:&quot;GPR&quot;},&quot;id&quot;:&quot;Dst Region_rowCount_0&quot;},&quot;Dst SFR&quot;:{&quot;Dst SFR&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;},&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;},&quot;id&quot;:&quot;Dst SFR_rowCount_0&quot;},&quot;Dst VarName&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;DstVarName0&quot;,&quot;value&quot;:&quot;DstVarName0&quot;},&quot;Dst VarName&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;DstVarName0&quot;,&quot;value&quot;:&quot;DstVarName0&quot;},&quot;id&quot;:&quot;Dst VarName_rowCount_0&quot;},&quot;Dst VarSize&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;10&quot;,&quot;value&quot;:&quot;10&quot;},&quot;id&quot;:&quot;Dst VarSize_rowCount_0&quot;,&quot;Dst VarSize&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;10&quot;,&quot;value&quot;:&quot;10&quot;}},&quot;Dst Mode&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;decremented,incremented,unchanged&quot;,&quot;text&quot;:&quot;unchanged&quot;,&quot;value&quot;:&quot;unchanged&quot;},&quot;Dst Mode&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;decremented,incremented,unchanged&quot;,&quot;text&quot;:&quot;unchanged&quot;,&quot;value&quot;:&quot;unchanged&quot;},&quot;id&quot;:&quot;Dst Mode_rowCount_0&quot;},&quot;Dst Message Size&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;1&quot;,&quot;value&quot;:&quot;1&quot;},&quot;Dst Message Size&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;1&quot;,&quot;value&quot;:&quot;1&quot;},&quot;id&quot;:&quot;Dst Message Size_rowCount_0&quot;},&quot;Start Trigger&quot;:{&quot;Start Trigger&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;AD,ADT,CCP1,CCP2,CCP3,CCP4,CLC1,CLC2,CLC3,CLC4,CMP1,CMP2,CRC,CSW,CWG1,CWG2,CWG3,DMA1A,DMA1DCNT,DMA1OR,DMA1SCNT,DMA2A,DMA2DCNT,DMA2OR,DMA2SCNT,I2C1,I2C1E,I2C1RX,I2C1TX,I2C2,I2C2E,I2C2RX,I2C2TX,INT0,INT1,INT2,IOC,LVD,NCO,NVM,None,OSF,SCAN,SMT1,SMT1PRA,SMT1PWA,SPI1,SPI1RX,SPI1TX,TMR0,TMR1,TMR1G,TMR2,TMR3,TMR3G,TMR4,TMR5,TMR5G,TMR6,U1,U1E,U1RX,U1TX,U2,U2E,U2RX,U2TX,ZCD&quot;,&quot;text&quot;:&quot;None&quot;,&quot;value&quot;:&quot;None&quot;},&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;AD,ADT,CCP1,CCP2,CCP3,CCP4,CLC1,CLC2,CLC3,CLC4,CMP1,CMP2,CRC,CSW,CWG1,CWG2,CWG3,DMA1A,DMA1DCNT,DMA1OR,DMA1SCNT,DMA2A,DMA2DCNT,DMA2OR,DMA2SCNT,I2C1,I2C1E,I2C1RX,I2C1TX,I2C2,I2C2E,I2C2RX,I2C2TX,INT0,INT1,INT2,IOC,LVD,NCO,NVM,None,OSF,SCAN,SMT1,SMT1PRA,SMT1PWA,SPI1,SPI1RX,SPI1TX,TMR0,TMR1,TMR1G,TMR2,TMR3,TMR3G,TMR4,TMR5,TMR5G,TMR6,U1,U1E,U1RX,U1TX,U2,U2E,U2RX,U2TX,ZCD&quot;,&quot;text&quot;:&quot;None&quot;,&quot;value&quot;:&quot;None&quot;},&quot;id&quot;:&quot;Start Trigger_rowCount_0&quot;},&quot;Abort Trigger&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;AD,ADT,CCP1,CCP2,CCP3,CCP4,CLC1,CLC2,CLC3,CLC4,CMP1,CMP2,CRC,CSW,CWG1,CWG2,CWG3,DMA1A,DMA1DCNT,DMA1OR,DMA1SCNT,DMA2A,DMA2DCNT,DMA2OR,DMA2SCNT,I2C1,I2C1E,I2C1RX,I2C1TX,I2C2,I2C2E,I2C2RX,I2C2TX,INT0,INT1,INT2,IOC,LVD,NCO,NVM,None,OSF,SCAN,SMT1,SMT1PRA,SMT1PWA,SPI1,SPI1RX,SPI1TX,TMR0,TMR1,TMR1G,TMR2,TMR3,TMR3G,TMR4,TMR5,TMR5G,TMR6,U1,U1E,U1RX,U1TX,U2,U2E,U2RX,U2TX,ZCD&quot;,&quot;text&quot;:&quot;None&quot;,&quot;value&quot;:&quot;None&quot;},&quot;id&quot;:&quot;Abort Trigger_rowCount_0&quot;,&quot;Abort Trigger&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;AD,ADT,CCP1,CCP2,CCP3,CCP4,CLC1,CLC2,CLC3,CLC4,CMP1,CMP2,CRC,CSW,CWG1,CWG2,CWG3,DMA1A,DMA1DCNT,DMA1OR,DMA1SCNT,DMA2A,DMA2DCNT,DMA2OR,DMA2SCNT,I2C1,I2C1E,I2C1RX,I2C1TX,I2C2,I2C2E,I2C2RX,I2C2TX,INT0,INT1,INT2,IOC,LVD,NCO,NVM,None,OSF,SCAN,SMT1,SMT1PRA,SMT1PWA,SPI1,SPI1RX,SPI1TX,TMR0,TMR1,TMR1G,TMR2,TMR3,TMR3G,TMR4,TMR5,TMR5G,TMR6,U1,U1E,U1RX,U1TX,U2,U2E,U2RX,U2TX,ZCD&quot;,&quot;text&quot;:&quot;None&quot;,&quot;value&quot;:&quot;None&quot;}}},{&quot;DMA Channels&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;--NONE--&quot;,&quot;text&quot;:&quot;DMA CHANNEL2&quot;,&quot;value&quot;:&quot;false&quot;},&quot;id&quot;:&quot;DMA Channels_rowCount_1&quot;},&quot;Src Module&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;--NONE--,MEMORY,TMR0,TMR4,TMR6,TMR1,TMR3,UART2,TMR2,TMR5&quot;,&quot;text&quot;:&quot;--NONE--&quot;,&quot;value&quot;:&quot;--NONE--&quot;},&quot;id&quot;:&quot;Src Module_rowCount_1&quot;},&quot;Src Region&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;SFR#disabled,GPR#enabled,Program Flash#enabled,Data EEPROM#enabled&quot;,&quot;text&quot;:&quot;GPR&quot;,&quot;value&quot;:&quot;GPR&quot;},&quot;id&quot;:&quot;Src Region_rowCount_1&quot;},&quot;Src SFR&quot;:{&quot;Src SFR&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;},&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;},&quot;id&quot;:&quot;Src SFR_rowCount_1&quot;},&quot;Src VarName&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;SrcVarName1&quot;,&quot;value&quot;:&quot;SrcVarName1&quot;},&quot;Src VarName&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;SrcVarName1&quot;,&quot;value&quot;:&quot;SrcVarName1&quot;},&quot;id&quot;:&quot;Src VarName_rowCount_1&quot;},&quot;Src VarSize&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;10&quot;,&quot;value&quot;:&quot;10&quot;},&quot;id&quot;:&quot;Src VarSize_rowCount_1&quot;,&quot;Src VarSize&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;10&quot;,&quot;value&quot;:&quot;10&quot;}},&quot;Src Address&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;Enter Address1&quot;,&quot;value&quot;:&quot;Enter Address1&quot;},&quot;id&quot;:&quot;Src Address_rowCount_1&quot;,&quot;Src Address&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;Enter Address1&quot;,&quot;value&quot;:&quot;Enter Address1&quot;}},&quot;Src Mode&quot;:{&quot;Src Mode&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;decremented,incremented,unchanged&quot;,&quot;text&quot;:&quot;unchanged&quot;,&quot;value&quot;:&quot;unchanged&quot;},&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;decremented,incremented,unchanged&quot;,&quot;text&quot;:&quot;unchanged&quot;,&quot;value&quot;:&quot;unchanged&quot;},&quot;id&quot;:&quot;Src Mode_rowCount_1&quot;},&quot;Src Message Size&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;1&quot;,&quot;value&quot;:&quot;1&quot;},&quot;Src Message Size&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;1&quot;,&quot;value&quot;:&quot;1&quot;},&quot;id&quot;:&quot;Src Message Size_rowCount_1&quot;},&quot;Dst Module&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;--NONE--,MEMORY,TMR0,TMR4,TMR6,TMR1,TMR3,UART2,TMR2,TMR5&quot;,&quot;text&quot;:&quot;--NONE--&quot;,&quot;value&quot;:&quot;--NONE--&quot;},&quot;id&quot;:&quot;Dst Module_rowCount_1&quot;},&quot;Dst Region&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;SFR,GPR&quot;,&quot;text&quot;:&quot;GPR&quot;,&quot;value&quot;:&quot;GPR&quot;},&quot;id&quot;:&quot;Dst Region_rowCount_1&quot;},&quot;Dst SFR&quot;:{&quot;Dst SFR&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;},&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;},&quot;id&quot;:&quot;Dst SFR_rowCount_1&quot;},&quot;Dst VarName&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;DstVarName1&quot;,&quot;value&quot;:&quot;DstVarName1&quot;},&quot;Dst VarName&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;DstVarName1&quot;,&quot;value&quot;:&quot;DstVarName1&quot;},&quot;id&quot;:&quot;Dst VarName_rowCount_1&quot;},&quot;Dst VarSize&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;10&quot;,&quot;value&quot;:&quot;10&quot;},&quot;id&quot;:&quot;Dst VarSize_rowCount_1&quot;,&quot;Dst VarSize&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;10&quot;,&quot;value&quot;:&quot;10&quot;}},&quot;Dst Mode&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;decremented,incremented,unchanged&quot;,&quot;text&quot;:&quot;unchanged&quot;,&quot;value&quot;:&quot;unchanged&quot;},&quot;Dst Mode&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;decremented,incremented,unchanged&quot;,&quot;text&quot;:&quot;unchanged&quot;,&quot;value&quot;:&quot;unchanged&quot;},&quot;id&quot;:&quot;Dst Mode_rowCount_1&quot;},&quot;Dst Message Size&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;1&quot;,&quot;value&quot;:&quot;1&quot;},&quot;Dst Message Size&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;1&quot;,&quot;value&quot;:&quot;1&quot;},&quot;id&quot;:&quot;Dst Message Size_rowCount_1&quot;},&quot;Start Trigger&quot;:{&quot;Start Trigger&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;AD,ADT,CCP1,CCP2,CCP3,CCP4,CLC1,CLC2,CLC3,CLC4,CMP1,CMP2,CRC,CSW,CWG1,CWG2,CWG3,DMA1A,DMA1DCNT,DMA1OR,DMA1SCNT,DMA2A,DMA2DCNT,DMA2OR,DMA2SCNT,I2C1,I2C1E,I2C1RX,I2C1TX,I2C2,I2C2E,I2C2RX,I2C2TX,INT0,INT1,INT2,IOC,LVD,NCO,NVM,None,OSF,SCAN,SMT1,SMT1PRA,SMT1PWA,SPI1,SPI1RX,SPI1TX,TMR0,TMR1,TMR1G,TMR2,TMR3,TMR3G,TMR4,TMR5,TMR5G,TMR6,U1,U1E,U1RX,U1TX,U2,U2E,U2RX,U2TX,ZCD&quot;,&quot;text&quot;:&quot;None&quot;,&quot;value&quot;:&quot;None&quot;},&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;AD,ADT,CCP1,CCP2,CCP3,CCP4,CLC1,CLC2,CLC3,CLC4,CMP1,CMP2,CRC,CSW,CWG1,CWG2,CWG3,DMA1A,DMA1DCNT,DMA1OR,DMA1SCNT,DMA2A,DMA2DCNT,DMA2OR,DMA2SCNT,I2C1,I2C1E,I2C1RX,I2C1TX,I2C2,I2C2E,I2C2RX,I2C2TX,INT0,INT1,INT2,IOC,LVD,NCO,NVM,None,OSF,SCAN,SMT1,SMT1PRA,SMT1PWA,SPI1,SPI1RX,SPI1TX,TMR0,TMR1,TMR1G,TMR2,TMR3,TMR3G,TMR4,TMR5,TMR5G,TMR6,U1,U1E,U1RX,U1TX,U2,U2E,U2RX,U2TX,ZCD&quot;,&quot;text&quot;:&quot;None&quot;,&quot;value&quot;:&quot;None&quot;},&quot;id&quot;:&quot;Start Trigger_rowCount_1&quot;},&quot;Abort Trigger&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;AD,ADT,CCP1,CCP2,CCP3,CCP4,CLC1,CLC2,CLC3,CLC4,CMP1,CMP2,CRC,CSW,CWG1,CWG2,CWG3,DMA1A,DMA1DCNT,DMA1OR,DMA1SCNT,DMA2A,DMA2DCNT,DMA2OR,DMA2SCNT,I2C1,I2C1E,I2C1RX,I2C1TX,I2C2,I2C2E,I2C2RX,I2C2TX,INT0,INT1,INT2,IOC,LVD,NCO,NVM,None,OSF,SCAN,SMT1,SMT1PRA,SMT1PWA,SPI1,SPI1RX,SPI1TX,TMR0,TMR1,TMR1G,TMR2,TMR3,TMR3G,TMR4,TMR5,TMR5G,TMR6,U1,U1E,U1RX,U1TX,U2,U2E,U2RX,U2TX,ZCD&quot;,&quot;text&quot;:&quot;None&quot;,&quot;value&quot;:&quot;None&quot;},&quot;id&quot;:&quot;Abort Trigger_rowCount_1&quot;,&quot;Abort Trigger&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;AD,ADT,CCP1,CCP2,CCP3,CCP4,CLC1,CLC2,CLC3,CLC4,CMP1,CMP2,CRC,CSW,CWG1,CWG2,CWG3,DMA1A,DMA1DCNT,DMA1OR,DMA1SCNT,DMA2A,DMA2DCNT,DMA2OR,DMA2SCNT,I2C1,I2C1E,I2C1RX,I2C1TX,I2C2,I2C2E,I2C2RX,I2C2TX,INT0,INT1,INT2,IOC,LVD,NCO,NVM,None,OSF,SCAN,SMT1,SMT1PRA,SMT1PWA,SPI1,SPI1RX,SPI1TX,TMR0,TMR1,TMR1G,TMR2,TMR3,TMR3G,TMR4,TMR5,TMR5G,TMR6,U1,U1E,U1RX,U1TX,U2,U2E,U2RX,U2TX,ZCD&quot;,&quot;text&quot;:&quot;None&quot;,&quot;value&quot;:&quot;None&quot;}}}],&quot;type&quot;:&quot;tableDynamicControls&quot;,&quot;key&quot;:&quot;dmaTable&quot;}</value>
+         <value>{&quot;dataArray&quot;:[{&quot;DMA Channels&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;--NONE--&quot;,&quot;text&quot;:&quot;DMA CHANNEL1&quot;,&quot;value&quot;:&quot;false&quot;},&quot;id&quot;:&quot;DMA Channels_rowCount_0&quot;},&quot;Src Module&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;--NONE--,TMR0,MEMORY,TMR6,TMR1,TMR2,UART2,TMR4,TMR5,TMR3&quot;,&quot;text&quot;:&quot;--NONE--&quot;,&quot;value&quot;:&quot;--NONE--&quot;},&quot;id&quot;:&quot;Src Module_rowCount_0&quot;},&quot;Src Region&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;SFR#disabled,GPR#enabled,Program Flash#enabled,Data EEPROM#enabled&quot;,&quot;text&quot;:&quot;GPR&quot;,&quot;value&quot;:&quot;GPR&quot;},&quot;id&quot;:&quot;Src Region_rowCount_0&quot;},&quot;Src SFR&quot;:{&quot;Src SFR&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;},&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;},&quot;id&quot;:&quot;Src SFR_rowCount_0&quot;},&quot;Src VarName&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;SrcVarName0&quot;,&quot;value&quot;:&quot;SrcVarName0&quot;},&quot;Src VarName&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;SrcVarName0&quot;,&quot;value&quot;:&quot;SrcVarName0&quot;},&quot;id&quot;:&quot;Src VarName_rowCount_0&quot;},&quot;Src VarSize&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;10&quot;,&quot;value&quot;:&quot;10&quot;},&quot;id&quot;:&quot;Src VarSize_rowCount_0&quot;,&quot;Src VarSize&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;10&quot;,&quot;value&quot;:&quot;10&quot;}},&quot;Src Address&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;Enter Address0&quot;,&quot;value&quot;:&quot;Enter Address0&quot;},&quot;id&quot;:&quot;Src Address_rowCount_0&quot;,&quot;Src Address&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;Enter Address0&quot;,&quot;value&quot;:&quot;Enter Address0&quot;}},&quot;Src Mode&quot;:{&quot;Src Mode&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;decremented,incremented,unchanged&quot;,&quot;text&quot;:&quot;unchanged&quot;,&quot;value&quot;:&quot;unchanged&quot;},&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;decremented,incremented,unchanged&quot;,&quot;text&quot;:&quot;unchanged&quot;,&quot;value&quot;:&quot;unchanged&quot;},&quot;id&quot;:&quot;Src Mode_rowCount_0&quot;},&quot;Src Message Size&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;1&quot;,&quot;value&quot;:&quot;1&quot;},&quot;Src Message Size&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;1&quot;,&quot;value&quot;:&quot;1&quot;},&quot;id&quot;:&quot;Src Message Size_rowCount_0&quot;},&quot;Dst Module&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;--NONE--,TMR0,MEMORY,TMR6,TMR1,TMR2,UART2,TMR4,TMR5,TMR3&quot;,&quot;text&quot;:&quot;--NONE--&quot;,&quot;value&quot;:&quot;--NONE--&quot;},&quot;id&quot;:&quot;Dst Module_rowCount_0&quot;},&quot;Dst Region&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;SFR,GPR&quot;,&quot;text&quot;:&quot;GPR&quot;,&quot;value&quot;:&quot;GPR&quot;},&quot;id&quot;:&quot;Dst Region_rowCount_0&quot;},&quot;Dst SFR&quot;:{&quot;Dst SFR&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;},&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;},&quot;id&quot;:&quot;Dst SFR_rowCount_0&quot;},&quot;Dst VarName&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;DstVarName0&quot;,&quot;value&quot;:&quot;DstVarName0&quot;},&quot;Dst VarName&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;DstVarName0&quot;,&quot;value&quot;:&quot;DstVarName0&quot;},&quot;id&quot;:&quot;Dst VarName_rowCount_0&quot;},&quot;Dst VarSize&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;10&quot;,&quot;value&quot;:&quot;10&quot;},&quot;id&quot;:&quot;Dst VarSize_rowCount_0&quot;,&quot;Dst VarSize&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;10&quot;,&quot;value&quot;:&quot;10&quot;}},&quot;Dst Mode&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;decremented,incremented,unchanged&quot;,&quot;text&quot;:&quot;unchanged&quot;,&quot;value&quot;:&quot;unchanged&quot;},&quot;Dst Mode&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;decremented,incremented,unchanged&quot;,&quot;text&quot;:&quot;unchanged&quot;,&quot;value&quot;:&quot;unchanged&quot;},&quot;id&quot;:&quot;Dst Mode_rowCount_0&quot;},&quot;Dst Message Size&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;1&quot;,&quot;value&quot;:&quot;1&quot;},&quot;Dst Message Size&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;1&quot;,&quot;value&quot;:&quot;1&quot;},&quot;id&quot;:&quot;Dst Message Size_rowCount_0&quot;},&quot;Start Trigger&quot;:{&quot;Start Trigger&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;AD,ADT,CCP1,CCP2,CCP3,CCP4,CLC1,CLC2,CLC3,CLC4,CMP1,CMP2,CRC,CSW,CWG1,CWG2,CWG3,DMA1A,DMA1DCNT,DMA1OR,DMA1SCNT,DMA2A,DMA2DCNT,DMA2OR,DMA2SCNT,I2C1,I2C1E,I2C1RX,I2C1TX,I2C2,I2C2E,I2C2RX,I2C2TX,INT0,INT1,INT2,IOC,LVD,NCO,NVM,None,OSF,SCAN,SMT1,SMT1PRA,SMT1PWA,SPI1,SPI1RX,SPI1TX,TMR0,TMR1,TMR1G,TMR2,TMR3,TMR3G,TMR4,TMR5,TMR5G,TMR6,U1,U1E,U1RX,U1TX,U2,U2E,U2RX,U2TX,ZCD&quot;,&quot;text&quot;:&quot;None&quot;,&quot;value&quot;:&quot;None&quot;},&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;AD,ADT,CCP1,CCP2,CCP3,CCP4,CLC1,CLC2,CLC3,CLC4,CMP1,CMP2,CRC,CSW,CWG1,CWG2,CWG3,DMA1A,DMA1DCNT,DMA1OR,DMA1SCNT,DMA2A,DMA2DCNT,DMA2OR,DMA2SCNT,I2C1,I2C1E,I2C1RX,I2C1TX,I2C2,I2C2E,I2C2RX,I2C2TX,INT0,INT1,INT2,IOC,LVD,NCO,NVM,None,OSF,SCAN,SMT1,SMT1PRA,SMT1PWA,SPI1,SPI1RX,SPI1TX,TMR0,TMR1,TMR1G,TMR2,TMR3,TMR3G,TMR4,TMR5,TMR5G,TMR6,U1,U1E,U1RX,U1TX,U2,U2E,U2RX,U2TX,ZCD&quot;,&quot;text&quot;:&quot;None&quot;,&quot;value&quot;:&quot;None&quot;},&quot;id&quot;:&quot;Start Trigger_rowCount_0&quot;},&quot;Abort Trigger&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;AD,ADT,CCP1,CCP2,CCP3,CCP4,CLC1,CLC2,CLC3,CLC4,CMP1,CMP2,CRC,CSW,CWG1,CWG2,CWG3,DMA1A,DMA1DCNT,DMA1OR,DMA1SCNT,DMA2A,DMA2DCNT,DMA2OR,DMA2SCNT,I2C1,I2C1E,I2C1RX,I2C1TX,I2C2,I2C2E,I2C2RX,I2C2TX,INT0,INT1,INT2,IOC,LVD,NCO,NVM,None,OSF,SCAN,SMT1,SMT1PRA,SMT1PWA,SPI1,SPI1RX,SPI1TX,TMR0,TMR1,TMR1G,TMR2,TMR3,TMR3G,TMR4,TMR5,TMR5G,TMR6,U1,U1E,U1RX,U1TX,U2,U2E,U2RX,U2TX,ZCD&quot;,&quot;text&quot;:&quot;None&quot;,&quot;value&quot;:&quot;None&quot;},&quot;id&quot;:&quot;Abort Trigger_rowCount_0&quot;,&quot;Abort Trigger&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;AD,ADT,CCP1,CCP2,CCP3,CCP4,CLC1,CLC2,CLC3,CLC4,CMP1,CMP2,CRC,CSW,CWG1,CWG2,CWG3,DMA1A,DMA1DCNT,DMA1OR,DMA1SCNT,DMA2A,DMA2DCNT,DMA2OR,DMA2SCNT,I2C1,I2C1E,I2C1RX,I2C1TX,I2C2,I2C2E,I2C2RX,I2C2TX,INT0,INT1,INT2,IOC,LVD,NCO,NVM,None,OSF,SCAN,SMT1,SMT1PRA,SMT1PWA,SPI1,SPI1RX,SPI1TX,TMR0,TMR1,TMR1G,TMR2,TMR3,TMR3G,TMR4,TMR5,TMR5G,TMR6,U1,U1E,U1RX,U1TX,U2,U2E,U2RX,U2TX,ZCD&quot;,&quot;text&quot;:&quot;None&quot;,&quot;value&quot;:&quot;None&quot;}}},{&quot;DMA Channels&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;--NONE--&quot;,&quot;text&quot;:&quot;DMA CHANNEL2&quot;,&quot;value&quot;:&quot;false&quot;},&quot;id&quot;:&quot;DMA Channels_rowCount_1&quot;},&quot;Src Module&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;--NONE--,TMR0,MEMORY,TMR6,TMR1,TMR2,UART2,TMR4,TMR5,TMR3&quot;,&quot;text&quot;:&quot;--NONE--&quot;,&quot;value&quot;:&quot;--NONE--&quot;},&quot;id&quot;:&quot;Src Module_rowCount_1&quot;},&quot;Src Region&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;SFR#disabled,GPR#enabled,Program Flash#enabled,Data EEPROM#enabled&quot;,&quot;text&quot;:&quot;GPR&quot;,&quot;value&quot;:&quot;GPR&quot;},&quot;id&quot;:&quot;Src Region_rowCount_1&quot;},&quot;Src SFR&quot;:{&quot;Src SFR&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;},&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;},&quot;id&quot;:&quot;Src SFR_rowCount_1&quot;},&quot;Src VarName&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;SrcVarName1&quot;,&quot;value&quot;:&quot;SrcVarName1&quot;},&quot;Src VarName&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;SrcVarName1&quot;,&quot;value&quot;:&quot;SrcVarName1&quot;},&quot;id&quot;:&quot;Src VarName_rowCount_1&quot;},&quot;Src VarSize&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;10&quot;,&quot;value&quot;:&quot;10&quot;},&quot;id&quot;:&quot;Src VarSize_rowCount_1&quot;,&quot;Src VarSize&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;10&quot;,&quot;value&quot;:&quot;10&quot;}},&quot;Src Address&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;Enter Address1&quot;,&quot;value&quot;:&quot;Enter Address1&quot;},&quot;id&quot;:&quot;Src Address_rowCount_1&quot;,&quot;Src Address&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;Enter Address1&quot;,&quot;value&quot;:&quot;Enter Address1&quot;}},&quot;Src Mode&quot;:{&quot;Src Mode&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;decremented,incremented,unchanged&quot;,&quot;text&quot;:&quot;unchanged&quot;,&quot;value&quot;:&quot;unchanged&quot;},&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;decremented,incremented,unchanged&quot;,&quot;text&quot;:&quot;unchanged&quot;,&quot;value&quot;:&quot;unchanged&quot;},&quot;id&quot;:&quot;Src Mode_rowCount_1&quot;},&quot;Src Message Size&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;1&quot;,&quot;value&quot;:&quot;1&quot;},&quot;Src Message Size&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;1&quot;,&quot;value&quot;:&quot;1&quot;},&quot;id&quot;:&quot;Src Message Size_rowCount_1&quot;},&quot;Dst Module&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;--NONE--,TMR0,MEMORY,TMR6,TMR1,TMR2,UART2,TMR4,TMR5,TMR3&quot;,&quot;text&quot;:&quot;--NONE--&quot;,&quot;value&quot;:&quot;--NONE--&quot;},&quot;id&quot;:&quot;Dst Module_rowCount_1&quot;},&quot;Dst Region&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;SFR,GPR&quot;,&quot;text&quot;:&quot;GPR&quot;,&quot;value&quot;:&quot;GPR&quot;},&quot;id&quot;:&quot;Dst Region_rowCount_1&quot;},&quot;Dst SFR&quot;:{&quot;Dst SFR&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;},&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;},&quot;id&quot;:&quot;Dst SFR_rowCount_1&quot;},&quot;Dst VarName&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;DstVarName1&quot;,&quot;value&quot;:&quot;DstVarName1&quot;},&quot;Dst VarName&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;DstVarName1&quot;,&quot;value&quot;:&quot;DstVarName1&quot;},&quot;id&quot;:&quot;Dst VarName_rowCount_1&quot;},&quot;Dst VarSize&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;10&quot;,&quot;value&quot;:&quot;10&quot;},&quot;id&quot;:&quot;Dst VarSize_rowCount_1&quot;,&quot;Dst VarSize&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;10&quot;,&quot;value&quot;:&quot;10&quot;}},&quot;Dst Mode&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;decremented,incremented,unchanged&quot;,&quot;text&quot;:&quot;unchanged&quot;,&quot;value&quot;:&quot;unchanged&quot;},&quot;Dst Mode&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;decremented,incremented,unchanged&quot;,&quot;text&quot;:&quot;unchanged&quot;,&quot;value&quot;:&quot;unchanged&quot;},&quot;id&quot;:&quot;Dst Mode_rowCount_1&quot;},&quot;Dst Message Size&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;1&quot;,&quot;value&quot;:&quot;1&quot;},&quot;Dst Message Size&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;&quot;,&quot;text&quot;:&quot;1&quot;,&quot;value&quot;:&quot;1&quot;},&quot;id&quot;:&quot;Dst Message Size_rowCount_1&quot;},&quot;Start Trigger&quot;:{&quot;Start Trigger&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;AD,ADT,CCP1,CCP2,CCP3,CCP4,CLC1,CLC2,CLC3,CLC4,CMP1,CMP2,CRC,CSW,CWG1,CWG2,CWG3,DMA1A,DMA1DCNT,DMA1OR,DMA1SCNT,DMA2A,DMA2DCNT,DMA2OR,DMA2SCNT,I2C1,I2C1E,I2C1RX,I2C1TX,I2C2,I2C2E,I2C2RX,I2C2TX,INT0,INT1,INT2,IOC,LVD,NCO,NVM,None,OSF,SCAN,SMT1,SMT1PRA,SMT1PWA,SPI1,SPI1RX,SPI1TX,TMR0,TMR1,TMR1G,TMR2,TMR3,TMR3G,TMR4,TMR5,TMR5G,TMR6,U1,U1E,U1RX,U1TX,U2,U2E,U2RX,U2TX,ZCD&quot;,&quot;text&quot;:&quot;None&quot;,&quot;value&quot;:&quot;None&quot;},&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;AD,ADT,CCP1,CCP2,CCP3,CCP4,CLC1,CLC2,CLC3,CLC4,CMP1,CMP2,CRC,CSW,CWG1,CWG2,CWG3,DMA1A,DMA1DCNT,DMA1OR,DMA1SCNT,DMA2A,DMA2DCNT,DMA2OR,DMA2SCNT,I2C1,I2C1E,I2C1RX,I2C1TX,I2C2,I2C2E,I2C2RX,I2C2TX,INT0,INT1,INT2,IOC,LVD,NCO,NVM,None,OSF,SCAN,SMT1,SMT1PRA,SMT1PWA,SPI1,SPI1RX,SPI1TX,TMR0,TMR1,TMR1G,TMR2,TMR3,TMR3G,TMR4,TMR5,TMR5G,TMR6,U1,U1E,U1RX,U1TX,U2,U2E,U2RX,U2TX,ZCD&quot;,&quot;text&quot;:&quot;None&quot;,&quot;value&quot;:&quot;None&quot;},&quot;id&quot;:&quot;Start Trigger_rowCount_1&quot;},&quot;Abort Trigger&quot;:{&quot;data&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;AD,ADT,CCP1,CCP2,CCP3,CCP4,CLC1,CLC2,CLC3,CLC4,CMP1,CMP2,CRC,CSW,CWG1,CWG2,CWG3,DMA1A,DMA1DCNT,DMA1OR,DMA1SCNT,DMA2A,DMA2DCNT,DMA2OR,DMA2SCNT,I2C1,I2C1E,I2C1RX,I2C1TX,I2C2,I2C2E,I2C2RX,I2C2TX,INT0,INT1,INT2,IOC,LVD,NCO,NVM,None,OSF,SCAN,SMT1,SMT1PRA,SMT1PWA,SPI1,SPI1RX,SPI1TX,TMR0,TMR1,TMR1G,TMR2,TMR3,TMR3G,TMR4,TMR5,TMR5G,TMR6,U1,U1E,U1RX,U1TX,U2,U2E,U2RX,U2TX,ZCD&quot;,&quot;text&quot;:&quot;None&quot;,&quot;value&quot;:&quot;None&quot;},&quot;id&quot;:&quot;Abort Trigger_rowCount_1&quot;,&quot;Abort Trigger&quot;:{&quot;isDisable&quot;:&quot;true&quot;,&quot;options&quot;:&quot;AD,ADT,CCP1,CCP2,CCP3,CCP4,CLC1,CLC2,CLC3,CLC4,CMP1,CMP2,CRC,CSW,CWG1,CWG2,CWG3,DMA1A,DMA1DCNT,DMA1OR,DMA1SCNT,DMA2A,DMA2DCNT,DMA2OR,DMA2SCNT,I2C1,I2C1E,I2C1RX,I2C1TX,I2C2,I2C2E,I2C2RX,I2C2TX,INT0,INT1,INT2,IOC,LVD,NCO,NVM,None,OSF,SCAN,SMT1,SMT1PRA,SMT1PWA,SPI1,SPI1RX,SPI1TX,TMR0,TMR1,TMR1G,TMR2,TMR3,TMR3G,TMR4,TMR5,TMR5G,TMR6,U1,U1E,U1RX,U1TX,U2,U2E,U2RX,U2TX,ZCD&quot;,&quot;text&quot;:&quot;None&quot;,&quot;value&quot;:&quot;None&quot;}}}],&quot;type&quot;:&quot;tableDynamicControls&quot;,&quot;key&quot;:&quot;dmaTable&quot;}</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TCLK" settingAlias="TMRCS" alias="CLKR_OUT"/>
@@ -7252,7 +7256,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR1" name="timerClockActual"/>
-         <value>0.5</value>
+         <value>0.476837</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="TMRGI" settingAlias="flag"/>
@@ -7307,12 +7311,12 @@
          <value>input</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="ZCD"/>
-         <value>9</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="PMD" registerAlias="PMD3" settingAlias="CCP4MD"/>
          <value>CCP4 enabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="ZCD"/>
+         <value>9</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMACON1" settingAlias="DMODE" alias="unchanged"/>
@@ -7451,12 +7455,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR6" registerAlias="TRST" settingAlias="TRSEL" alias="PWM6OUT"/>
-         <value>9</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR5" registerAlias="TGATE" settingAlias="TGSS" alias="CLC4OUT"/>
          <value>26</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR6" registerAlias="TRST" settingAlias="TRSEL" alias="PWM6OUT"/>
+         <value>9</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="SLRCONB" settingAlias="SLRB1" alias="maximum"/>
@@ -7483,12 +7487,12 @@
          <value>32768</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="U1"/>
-         <value>30</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="WWDT" registerAlias="WDTCON0" settingAlias="WDTPS" alias="1:1048576"/>
          <value>15</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="U1"/>
+         <value>30</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="MEMORY" registerAlias="NVMCON1" settingAlias="WREN" alias="enabled"/>
@@ -7607,12 +7611,12 @@
          <value>13</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR6" name="TimerPeriodkey"/>
-         <value>1.0007747933884297</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR4" registerAlias="THLT" settingAlias="TMODE" alias="Starts at TMR4_ers=0 and resets on TMR4_ers=1"/>
          <value>23</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR6" name="TimerPeriodkey"/>
+         <value>1.0007747933884297</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="SPI1TX"/>
@@ -7647,16 +7651,16 @@
          <value>25</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="System Module" name="generateMain"/>
+         <value>enabled</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="I2C2"/>
          <value>48</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="U1TX"/>
          <value>28</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="System Module" name="generateMain"/>
-         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR2" registerAlias="THLT" settingAlias="TMODE" alias="Starts at first rising TMR2_ers"/>
@@ -7711,12 +7715,12 @@
          <value>15</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TGCON" settingAlias="TGPOL" alias="low"/>
-         <value>0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR4" registerAlias="TRST" settingAlias="TRSEL" alias="CLC3_out"/>
          <value>19</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TGCON" settingAlias="TGPOL" alias="low"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR4" registerAlias="TRST" settingAlias="TRSEL" alias="CCP3OUT"/>
@@ -7728,7 +7732,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="WPUA" settingAlias="WPUA0"/>
-         <value>clear</value>
+         <value>set</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL2" registerAlias="DMAORI" settingAlias="priority"/>
@@ -7792,7 +7796,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="TMRI" settingAlias="order"/>
-         <value>14</value>
+         <value>15</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR6" registerAlias="TMRI" settingAlias="order"/>
@@ -7804,7 +7808,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR2" registerAlias="TMRI" settingAlias="order"/>
-         <value>13</value>
+         <value>14</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCCF" settingAlias="IOCCF0" alias="disabled"/>
@@ -7812,11 +7816,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="TMRI" settingAlias="order"/>
-         <value>11</value>
+         <value>12</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR4" registerAlias="TMRI" settingAlias="order"/>
-         <value>10</value>
+         <value>11</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR0" name="maxPeriod"/>
@@ -7827,7 +7831,7 @@
          <value>17</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T2INPPS%aux7"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T2INPPS%aux8"/>
          <value>%DESELECT%</value>
       </entry>
       <entry>
@@ -7956,7 +7960,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR5" name="timerPeriodActual"/>
-         <value>16.912516129</value>
+         <value>16</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCCF" settingAlias="IOCCF5"/>
@@ -7972,7 +7976,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Interrupt Module" name="SelectedInterruptIndexHigh"/>
-         <value>0</value>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR5" registerAlias="TGCON" settingAlias="TGVAL" alias="disabled"/>
@@ -7987,12 +7991,12 @@
          <value>disabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="CSW"/>
-         <value>3</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="System Module" registerAlias="CONFIG3H"/>
          <value>63</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="CSW"/>
+         <value>3</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="WWDT" registerAlias="PCON" settingAlias="nRWDT"/>
@@ -8007,12 +8011,16 @@
          <value>2</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR2" registerAlias="THLT" settingAlias="TMODE" alias="Starts at T2ON = 1 and TMR2_ers = 1"/>
+         <value>1</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR0" name="requestedPeriod"/>
          <value>0.00256</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR2" registerAlias="THLT" settingAlias="TMODE" alias="Starts at T2ON = 1 and TMR2_ers = 1"/>
-         <value>1</value>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T1CKIPPS%aux6"/>
+         <value>%DESELECT%</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCCP" settingAlias="IOCCP6"/>
@@ -8021,10 +8029,6 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="HFIntOscClockInHz"/>
          <value>64000000</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T1CKIPPS%aux1"/>
-         <value>%DESELECT%</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR4" name="pinEnable"/>
@@ -8251,12 +8255,12 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="U2RX"/>
-         <value>50</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG3L" settingAlias="WDTCPS"/>
          <value>WDTCPS_31</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="U2RX"/>
+         <value>50</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART2" name="baudRateComboBox"/>
@@ -8512,7 +8516,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR1" name="timerPeriodActual"/>
-         <value>2</value>
+         <value>2.097152</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR6" registerAlias="THLT" settingAlias="TCKSYNC"/>
@@ -8592,7 +8596,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR5" registerAlias="TMRH"/>
-         <value>0</value>
+         <value>13</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISC" settingAlias="TRISC7"/>
@@ -8608,7 +8612,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR1" registerAlias="TMRH"/>
-         <value>225</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR6" name="moduleLoaded"/>
@@ -8739,10 +8743,6 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T5GPPS%aux10"/>
-         <value>%DESELECT%</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="SLRCONA" settingAlias="SLRA2"/>
          <value>limited</value>
       </entry>
@@ -8777,6 +8777,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR2" registerAlias="TRST" settingAlias="TRSEL" alias="CLC2_out"/>
          <value>18</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T5GPPS%aux1"/>
+         <value>%DESELECT%</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="SLRCONC" settingAlias="SLRC5" alias="maximum"/>
@@ -9071,12 +9075,12 @@
          <value>disabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="TMR1G"/>
-         <value>33</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG4H" settingAlias="WRTSAF" alias="OFF"/>
          <value>8</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="TMR1G"/>
+         <value>33</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCCON3" settingAlias="ORDY" alias="clock=NOSC"/>
@@ -9084,7 +9088,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="ANSELC" settingAlias="ANSELC6"/>
-         <value>analog</value>
+         <value>digital</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="PMD" registerAlias="PMD6" settingAlias="CLC1MD" alias="CLC1 enabled"/>
@@ -9119,11 +9123,11 @@
          <value>done</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR0" registerAlias="T0CON1" settingAlias="T0ASYNC" alias="synchronised"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART2" registerAlias="UFIFO" settingAlias="TXWRE" alias="No error"/>
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART2" registerAlias="UFIFO" settingAlias="TXWRE" alias="No error"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR0" registerAlias="T0CON1" settingAlias="T0ASYNC" alias="synchronised"/>
          <value>0</value>
       </entry>
       <entry>
@@ -9131,12 +9135,12 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="TGCON" settingAlias="TGGO"/>
-         <value>done</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TGATE" settingAlias="TGSS" alias="CMP2OUT"/>
          <value>21</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="TGCON" settingAlias="TGGO"/>
+         <value>done</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="PMD" registerAlias="PMD2" settingAlias="ADCMD"/>
@@ -9192,7 +9196,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR1" name="reloadValue"/>
-         <value>57786</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG4H" settingAlias="WRTD" alias="OFF"/>
@@ -9520,7 +9524,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RC7"/>
-         <value>RLED</value>
+         <value>TRIG</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TGCON" settingAlias="TGSPM" alias="enabled"/>
@@ -9528,7 +9532,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR1" name="timerPeriod"/>
-         <value>2</value>
+         <value>0.038</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RC3"/>
@@ -9544,7 +9548,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RC6"/>
-         <value>GLED</value>
+         <value>ECHO</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="ODCONB" settingAlias="ODCB5"/>
@@ -9559,12 +9563,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="UART2" registerAlias="UCON2"/>
-         <value>0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR5" registerAlias="TGATE" settingAlias="TGSS" alias="PWM7OUT"/>
          <value>15</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="UART2" registerAlias="UCON2"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="TRISC" settingAlias="TRISC2" alias="input"/>
@@ -9656,7 +9660,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCI" settingAlias="order"/>
-         <value>16</value>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="anselUserSetRA4"/>
@@ -9767,12 +9771,12 @@
          <value>disabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="anselUserSetRB3"/>
-         <value>enabled</value>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T3GPPS%aux4"/>
+         <value>%DESELECT%</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T3GPPS%aux5"/>
-         <value>%DESELECT%</value>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="anselUserSetRB3"/>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="clockFreq"/>
@@ -9872,7 +9876,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL1" registerAlias="DMAORI" settingAlias="order"/>
-         <value>8</value>
+         <value>9</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="UART2" registerAlias="UERRIR" settingAlias="TXMTIF"/>
@@ -9880,7 +9884,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL2" registerAlias="DMAORI" settingAlias="order"/>
-         <value>4</value>
+         <value>5</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="RB0PPS" settingAlias="RB0PPS"/>
@@ -9921,6 +9925,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="WWDT" registerAlias="WDTCON0" settingAlias="WDTPS" alias="1:256"/>
          <value>3</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T5CKIPPS%aux0"/>
+         <value>%DESELECT%</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="anselUserSetRC5"/>
@@ -9987,20 +9995,16 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T5CKIPPS%aux9"/>
-         <value>%DESELECT%</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="anselUserSetRC0"/>
          <value>enabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="MEMORY" registerAlias="NVMI" settingAlias="enable"/>
-         <value>disabled</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR5" registerAlias="TCON" settingAlias="TCKPS" alias="1:2"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="MEMORY" registerAlias="NVMI" settingAlias="enable"/>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR5" registerAlias="TGCON" settingAlias="TGPOL"/>
@@ -10283,11 +10287,11 @@
          <value>31</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART2" registerAlias="UUIR" settingAlias="WUIF" alias="idle"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR5" registerAlias="TCON" settingAlias="nTSYNC" alias="do_not_synchronize"/>
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR5" registerAlias="TCON" settingAlias="nTSYNC" alias="do_not_synchronize"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART2" registerAlias="UUIR" settingAlias="WUIF" alias="idle"/>
          <value>1</value>
       </entry>
       <entry>
@@ -10331,12 +10335,12 @@
          <value>15</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="TMR4"/>
-         <value>56</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="PMD" registerAlias="PMD0" settingAlias="CRCMD" alias="CRC disabled"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="TMR4"/>
+         <value>56</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="TMR3"/>
@@ -10376,7 +10380,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR1" name="clockFreq"/>
-         <value>64000000</value>
+         <value>31250</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART2" registerAlias="UERRIE" settingAlias="TXCIE" alias="enabled"/>
@@ -10516,7 +10520,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR1" registerAlias="TCLK"/>
-         <value>4</value>
+         <value>6</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART2" registerAlias="UUIR" settingAlias="WUIF" alias="WUE not enabled by software"/>
@@ -10708,19 +10712,19 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="TMRGI" settingAlias="order"/>
-         <value>15</value>
+         <value>16</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="TRISC" settingAlias="TRISC1" alias="output"/>
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="UART2" registerAlias="UI" settingAlias="enable"/>
-         <value>disabled</value>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR5" registerAlias="TMRGI" settingAlias="order"/>
+         <value>10</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR5" registerAlias="TMRGI" settingAlias="order"/>
-         <value>9</value>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="UART2" registerAlias="UI" settingAlias="enable"/>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCBF" settingAlias="IOCBF6" alias="enabled"/>
@@ -10728,7 +10732,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="TMRGI" settingAlias="order"/>
-         <value>12</value>
+         <value>13</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCI" settingAlias="priority"/>
@@ -10799,16 +10803,16 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="DMA2A"/>
-         <value>45</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="PMD" registerAlias="PMD5" settingAlias="SPI1MD" alias="SPI1 disabled"/>
          <value>1</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="DMA2A"/>
+         <value>45</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR1" name="timerstart"/>
-         <value>enabled</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="customNameUserSet RE3"/>
@@ -10895,12 +10899,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TGATE" settingAlias="TGSS" alias="CLC4OUT"/>
-         <value>26</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR5" registerAlias="TCLK" settingAlias="TMRCS" alias="T5CKIPPS"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TGATE" settingAlias="TGSS" alias="CLC4OUT"/>
+         <value>26</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR4" registerAlias="THLT" settingAlias="TMODE" alias="Starts on falling edge on TMR4_ers"/>
@@ -10915,12 +10919,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL2" registerAlias="DMADSAL" settingAlias="SSA"/>
-         <value>0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCCON3" settingAlias="CSWHOLD" alias="will hold"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL2" registerAlias="DMADSAL" settingAlias="SSA"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCBP" settingAlias="IOCBP2"/>
@@ -10931,11 +10935,11 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL1" registerAlias="DMADSAL" settingAlias="SSA"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCEN" settingAlias="LFOEN" alias="disabled"/>
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCEN" settingAlias="LFOEN" alias="disabled"/>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA CHANNEL1" registerAlias="DMADSAL" settingAlias="SSA"/>
          <value>0</value>
       </entry>
       <entry>
@@ -11208,7 +11212,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="WPUC" settingAlias="WPUC6"/>
-         <value>clear</value>
+         <value>set</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="T3GPPS"/>
@@ -11227,10 +11231,6 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="U2CTSPPS%aux8"/>
-         <value>%DESELECT%</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="INLVLB" settingAlias="INLVLB2" alias="ST_input"/>
          <value>1</value>
       </entry>
@@ -11241,6 +11241,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMASIRQ" settingAlias="SIRQ" alias="NVM"/>
          <value>4</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="U2CTSPPS%aux9"/>
+         <value>%DESELECT%</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR0" name="postscaleDivisor"/>
@@ -11471,12 +11475,12 @@
          <value>WDTCWS_7</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMACON1" settingAlias="SMODE" alias="incremented"/>
-         <value>1</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCCON1" settingAlias="NOSC" alias="EXTOSC   with 4x PLL"/>
          <value>2</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL1" registerAlias="DMACON1" settingAlias="SMODE" alias="incremented"/>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TGCON" settingAlias="TGGO" alias="done"/>
@@ -11671,12 +11675,12 @@
          <value>disabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR6" registerAlias="TRST" settingAlias="TRSEL" alias="CLC4_out"/>
-         <value>20</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TGCON" settingAlias="TGTM" alias="enabled"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR6" registerAlias="TRST" settingAlias="TRSEL" alias="CLC4_out"/>
+         <value>20</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="iocUserSet RA1"/>
@@ -11811,12 +11815,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR6" registerAlias="TCON" settingAlias="TCKPS" alias="1:1"/>
-         <value>0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TCLK" settingAlias="TMRCS" alias="TMR1_Overflow"/>
          <value>10</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR6" registerAlias="TCON" settingAlias="TCKPS" alias="1:1"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR6" registerAlias="TCON" settingAlias="TCKPS" alias="1:2"/>
@@ -11924,7 +11928,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="customNameUserSet RA2"/>
-         <value>enabled</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="customNameUserSet RA3"/>
@@ -11936,7 +11940,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="customNameUserSet RA5"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="customNameUserSet RA6"/>
@@ -11944,7 +11948,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="customNameUserSet RA7"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="PMD" registerAlias="PMD0" settingAlias="CRCMD" alias="CRC enabled"/>
@@ -12028,15 +12032,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR5" name="timerPeriod"/>
-         <value>16.912</value>
+         <value>16</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA CHANNEL2" registerAlias="DMAAIRQ" settingAlias="AIRQ" alias="DMA2SCNT"/>
          <value>42</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T0CKIPPS%aux6"/>
-         <value>%DESELECT%</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR2" registerAlias="THLT" settingAlias="TCKPOL" alias="Falling Edge"/>
@@ -12070,7 +12070,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/interrupt_manager.c</file>
-         <hash>d561457b6386d9d39fcab86ef0e365c8384d979494382b9f3a033694ccd95683</hash>
+         <hash>173e5df5e3afa25515f617bdc61d6fb8f8d05b63815a474ed4ed1f359e89f839</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/mcc.c</file>
@@ -12078,7 +12078,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/pin_manager.c</file>
-         <hash>b834a856447e8e9f77df26e511fd69014ccb09ca264a35d2bb54fd0e804f1ee8</hash>
+         <hash>9a2632f7a432b9b4dcf211ff44fc56309f32842fe1c2fa252e4b8e48d9bc56b5</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/tmr0.c</file>
@@ -12086,7 +12086,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/pin_manager.h</file>
-         <hash>c8327dbb12a23d14dc44e879ac3259baa46fca103c0b67ef208398e46f663204</hash>
+         <hash>45eb98b894a157efed48becef229c556663587d5dac655053d1b211702e6b11f</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/memory.h</file>
@@ -12094,15 +12094,15 @@
       </entry>
       <entry>
          <file>mcc_generated_files/tmr1.c</file>
-         <hash>207260d6d8bceefd0cf8afd24bf349532f754849c144416ae42c15460dc328a6</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/memory.c</file>
-         <hash>e9159ab680dca12b5c7b5ce12df89b26bf6ffcb72b17cb134369a829c358e160</hash>
+         <hash>ef65a23df7479eea593003e96e49d28c2018050603006dc68afaae443ad6fd8f</hash>
       </entry>
       <entry>
          <file>main.c</file>
          <hash>5b68fb04ca80900630cf9dd1867cabf0b0fbca4c1644603d9faea27a6d3f5556</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/memory.c</file>
+         <hash>e9159ab680dca12b5c7b5ce12df89b26bf6ffcb72b17cb134369a829c358e160</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/tmr6.c</file>
@@ -12114,7 +12114,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/tmr2.h</file>
-         <hash>b41539c6a8f5775a94fe91c3ec4f14bd606bc346445a5739ab35605151b5ad6c</hash>
+         <hash>86316167bcface3009e40c89cdb3fd41a318bb6cd72cf84531ec6643195a6974</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/tmr3.h</file>
@@ -12126,7 +12126,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/tmr2.c</file>
-         <hash>95de8442e333cc5b77a08bcd57d6137798c14f2aef2abe03794387210bc777bf</hash>
+         <hash>51ebac4eceed8282ffcbed56014a53f9e3bfd9c005e5932849bcb8bd6a788d54</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/tmr3.c</file>
@@ -12142,7 +12142,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/tmr5.c</file>
-         <hash>58b05411f47ca57e13b32b4e8b2c1852a0c350a130c7f8de25ab7af61c395933</hash>
+         <hash>02d7ad4556986ebec8b1474ecb6387d12a6ecc15937ea4013fb4d86d31f24c9a</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/device_config.h</file>

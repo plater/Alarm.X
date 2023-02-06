@@ -47,7 +47,13 @@
  * Values from sanispray
     Timer0 = 1 s
     Timer1 = 38.016 ms = 0xFB5C 1:1 divide
-    Timer2 = 1 s
+    8 bit, MF_INT_31.25KHz, Enable Gate, Gate signal T1G_pin Polarity= low
+    Timer2 = 1 s, roll over pulse, Software control,
+             LF_INT, Rising edge, pre 1:128, post 1:3
+    Timer3 = 10ms
+    Timer4 = 5 s
+    Timer5 = 16 s
+    Timer6 = 1 s
  */
 void main(void)
 {
@@ -63,17 +69,42 @@ void main(void)
 
     // Disable the Global Interrupts
     INTERRUPT_GlobalInterruptDisable();
+    IOCCF6_SetInterruptHandler(SonarInt);
+//    UART2_SetRxInterruptHandler()
     PIE6bits.U2RXIE = 0;
+    PIE4bits.TMR2IE = 0;
+    PIE0bits.IOCIE = 0;
     gsm_init(0);
     gsmbyte = Get_Signal();
     gsmbyte = Get_Battery();
+    vendprice = ReadDistance();//Returns distance from 2 up to 400cm, 65535 = timeout and 1 = no device
+    TMR6_Initialize();
+    T6CONbits.TMR6ON = 1;
+    distantcount = 0;
+    memset(distant, 0, sizeof(distant));
+    while (1)
+    {
+        if(TMR6_HasOverflowOccured())
+        {
+            T6CONbits.TMR6ON = 0;
+            vendprice = ReadDistance();
+            distant[distantcount] = vendprice;
+            distantcount++;
+            if(distantcount >= 512)
+            {
+
+                distantcount = 0;
+                memset(distant, 0, sizeof(distant));
+                gsmbyte = Get_Battery();
+            }
+            TMR6_Initialize();
+            T6CONbits.TMR6ON = 1;
+        }
+    }
+    asm("RESET");
     Call_Home();
     Call_Me();
     Read_SMS();
-    while (1)
-    {
-        // Add your application code
-    }
 }
 /**
  End of File
